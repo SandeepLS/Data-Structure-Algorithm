@@ -1,0 +1,35 @@
+Array:- is a collection of items, of the same variable type stored,
+        that are stored at contiguous memory location.
+Syntax:-
+  let arrName = [calue1, value2,..]; OR
+  let arrName = new Array();
+
+index ->   0  1  2  3  4  5
+element -> 5  10  15  20  25
+
+Types of Array operations:-
+Traversal: Traverse through the elements of an array.
+Insertion: Inserting a new element in an array.
+Deletion: Deleting element from the array.
+Searching:  Search for an element in the array.
+Sorting: Maintaining the order of elements in the array.
+
+Ex:-
+// Initializing while declaring
+    // Creates an array having elements 10, 20, 30, 40, 50
+    var house = new Array(5, 10, 15, 20, 25);
+
+    // Creates an array of 5 undefined elements
+    var house1 = new Array(s);
+
+    // Creates an array with element 1BHK
+    var house2 =  new Array("1BHK");
+    
+    console.log(house);
+    console.log(house1);
+    console.log(house2);
+
+O/P:-
+[ 10, 20, 30, 40, 50 ]
+[ <5 empty items> ]
+[ '1BHK' ]

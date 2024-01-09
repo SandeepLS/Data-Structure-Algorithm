@@ -1,6 +1,0 @@
-https://www.geeksforgeeks.org/learn-data-structures-with-javascript-dsa-tutorial/
-LL:- is a linear Data structure, unlike array, LL are not stored at a contiguous memory location,
-     It is bascically chain of node, each node contains information like data & a pointer to next node in the chain.
-     There is a head pointer, where points to the first element of the LL.
-
-

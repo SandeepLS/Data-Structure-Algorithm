@@ -1,0 +1,11 @@
+Def:-Algorithm is sert of Well-defined instruction, to solve a particular problem.
+Ex:-Algorithm os two num.
+
+ingredients                  Recipe                Tastydish
+    |                          |                      |
+  Input                      Algorithm              Result
+    |                          |                      |
+ two num                   Add num using '+'.        Sum of
+  a & b                    Return the value.         a & b.
+
+

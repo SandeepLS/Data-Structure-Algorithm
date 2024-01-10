@@ -1,0 +1,67 @@
+We evalute the Performance, of an algorithm, In term of its Input size.
+Time Complexity:-Amount of time, taken by an algorithm to run, as a function of input.
+Space complexity:-Amount of space, taken by an algorithm to run, as a function of input.
+
+By evaluating against input-size, the analysis is not only machine independent,
+But the comparision is also more appropriate.
+
+=>How to represent Complexity:-
+  Mathematical tools to represent time & space complexity.
+  =>Big-O Notation -Worst case complexity. =>Being practical not warry about Best & average. Primarly we concerned Worst case during algorithm.
+  =>Omega Notation -Best case complexity.
+  =>Theta Notation -Average case complexity.
+
+(A) Bog-O Notation;-
+    Worst case complexity of an anlorithm, is represented using the Big-O Notation.
+    Big-O notation describe the complexity of an algorithm, using Algebric terms.
+    It has two imp components:-
+        -It is expressed in terms of the input.
+        -It focous on the big-picture, without getting caught up in the minute.
+
+(i)Big-O Time complexity:
+    Time complexity:- O(n)-Linear
+    Ex:- n+2 => 4+2
+      function semation(n){       //--> 4 
+          sum = 0;                //--> 1 time executed
+          for(let i=1;i<=n;i++){
+              sum += i;           //--> 4 times executed
+          }
+          return sum;             //--> 1 time executed
+      }
+      var result = semation(4);
+      console.log(result)
+
+    Ex:-
+    function semation(n){
+        return console.log((n * (n+1)) /2);
+    }
+    semation(10);
+
+    Ex-3:-Two Nested loop
+    Time complexity:- O(n square)- Quadratic
+    3n sq + 5n + 1
+          for(i=1;i<=n;i++){
+              for(j=1;j<=n;j++){
+              }
+          }
+
+    Ex-4:-Three Nested loop
+        Time complexity:- O(n cube)- Cubic
+        3n cq + 5n + 1
+              for(i=1;i<=n;i++){
+                  for(j=1;j<=n;j++){
+                      for(k=1;k<=n;k++){
+                      }
+                  }
+              }
+     Ex-5:-
+        Tme complexity:- O(logn)- Logarithmic
+
+(ii)Space complexity:- as per same. ex: sorting algorithm
+    O(1)-constant
+    O(n)-Liner
+    O(logn)-Logarithmic
+
+
+
+

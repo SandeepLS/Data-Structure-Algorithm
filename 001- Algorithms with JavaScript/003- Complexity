@@ -62,6 +62,39 @@ But the comparision is also more appropriate.
     O(n)-Liner
     O(logn)-Logarithmic
 
+(B)Time Complexity of Object Big-O:-
+    An Object is a collection of key value pairs.
+    Ex:- const person {
+              firstName: 'Sandeep',
+              lastName: 'LS'
+        }
+    If u want insert, remove, Access your property, timecomplexity is constant.
+    -Insert- O(1)
+    -Remove- O(1)
+    -Access- O(1)
+    
+    if u want search an property, timecomplexity is Liner
+    -Search- O(n)
+    
+    Few methods on Objects:-
+    -Object.Keys() -> O(n) =>which return an Array of all Keys.
+    -Object.values() -> O(n) =>Which return an Array of all values, on the Object.
+    -Object.entries() -> O(n) =>All have liner TimeComplexity.
+
+(C)Time Complexity of Array Big-O:-
+    Array is an orderd, collection of values.
+    Ex:- const odd = [1,2,3,4,5];
+    
+    If we Insert/remove at end-O(1) => Tiemcomplexity is constant
+    If we Insert/remove at Beginning-O(n) =>Timecomplexity is Liner.
+    Accessing an element is O(1), timecomplexity, has fetching first element is no difference.
+    Searching for an element O(n), still Liner timeComplexity, As a element can be the last one array.
+    
+    Few Array methods:-
+    0Push/pop ->O(1)
+    shift/unshift/concat/slice/splice -> O(n) =>Liner
+    forEach/map/filter/reduce ->O(n) =>Liner
+
 
 
 

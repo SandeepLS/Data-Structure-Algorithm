@@ -1,0 +1,27 @@
+Fibonacci Sequence:- is a sequence, Which each number is sum of the, two preceding ones.
+                    -The first two numbers, in the sequence are 0 & 1.
+Example:-
+-fibonacci(2) => [0, 1]
+-fibonacci(3) => [0, 1, 1]
+-fibonacci(7) => [0, 1, 1, 2, 3, 5, 8]
+
+Ex:-
+function fibonacci(n){
+    const fib = [0, 1];     //initialize with an arr two numbers.
+    for(let i=2; i<n; i++){  //Then we need to populate next element, till n element
+        fib[i] = fib[i-1] + fib[i-2]; //By adding previous of two numbers.
+    }
+    return fib;
+}
+console.log(fibonacci(2));  //[ 0, 1 ]
+console.log(fibonacci(3));  //[ 0, 1, 1 ]
+console.log(fibonacci(7));  //[ 0, 1, 1, 2, 3, 5, 8]
+//Big-O = O(n)
+
+
+
+=>Calculation not dependenton input size - O(1)
+  -loop - O(n);
+  -nested loop - O(n^2)
+  -input size reduced by half - O(logn)
+

@@ -1,0 +1,55 @@
+Def:-Prime number is a natural number, greter then 1,
+that is not a product of two smaller natural numbers.
+isPrime(5)= true(1*5 or 5*1)
+isPrime(4)= false(1*4 or 2*2 or 4*1)
+              OR
+Which can be devided by 1 & By-itself.
+every prime number, has exactly 2 factors. =>1 & itself.
+
+Big-O Guide:-
+Calculation not depend on input size- O(1)
+-loop- O(n)
+-nested loops- O(n^2)
+inputsize reduced by half- O(logn)
+
+Ex:
+function isPrime(n){
+    if(n < 2){
+        return false;
+    }
+    for(let i=2; i<n; i++){
+        if(n % i ===0){
+            return false;
+        }
+    }
+    return true;
+}
+console.log(isPrime(1));    //false
+console.log(isPrime(5));    //true
+console.log(isPrime(4));    //false
+-------------------------------------------------------------------------------------
+Ex
+const readline = require('readline');
+const rl = readline.createInterface({
+    input:process.stdin,
+    output:process.stdout
+});
+
+function isPrime(n){
+    if(n < 2){
+        return false;
+    }
+    for(let i=2; i<n; i++){
+        if(n % i ===0){
+            return false;
+        }
+    }
+    return true;
+}
+rl.question("Enter a factorial num:", function(userInput){
+    const n = parseInt(userInput);
+    const output = isPrime(n);
+    console.log(output);
+    rl.close();
+})
+

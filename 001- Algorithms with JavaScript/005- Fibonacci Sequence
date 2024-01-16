@@ -26,13 +26,16 @@ console.log(fibonacci(7));  //[ 0, 1, 1, 2, 3, 5, 8]
   -input size reduced by half - O(logn)
 
 --------------------------------------------------------------------------------------------------
+Ex:If you are working with Node.js, you can use the readline module to take input from the user.
 const readline = require('readline');
 
+//Create an interface, to read from the command Line
 const rl = readline.createInterface({
     input:process.stdin,
     output:process.stdout
 });
 
+//Fibonacci Algorithms
 function fibonacci(n){
     const fib = [0, 1];
     for(let i=2; i<n; i++){
@@ -41,6 +44,7 @@ function fibonacci(n){
     return fib;
 }
 
+// Ask the user to enter something
 rl.question("Enter the no of Fibonacci number generate:-", function(userInput){
     const n = parseInt(userInput);
     const result = fibonacci(n);

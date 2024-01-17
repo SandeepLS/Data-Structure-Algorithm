@@ -4,21 +4,103 @@ Why:A great technique to simplify your solution.
 Every recursion solution, need to solve a base case- A condition to terminate the recursion.
 
 (1)Recursive Fibonacci Sequence:-
-Fibonaccci sequence is sequence, Which each number us sum of the, two preceding ones.
-By default first two numbers present in sequence, they are 0 & 1.
-recursiveFibonacci(0)= 0
-recursiveFibonacci(1)= 1
-recursiveFibonacci(6)= 8
-
-Ex:
-function recursiveFib(n){
-    if(n < 2){
-        return n;
+    Fibonaccci sequence is sequence, Which each number us sum of the, two preceding ones.
+    By default first two numbers present in sequence, they are 0 & 1.
+    recursiveFibonacci(0)= 0
+    recursiveFibonacci(1)= 1
+    recursiveFibonacci(6)= 8
+    
+    Ex:
+    function recursiveFib(n){
+        if(n < 2){
+            return n;
+        }
+        return recursiveFib(n-1) + recursiveFib(n-2);
     }
-    return recursiveFib(n-1) + recursiveFib(n-2);
-}
-console.log(recursiveFib(1));
-console.log(recursiveFib(2));
-console.log(recursiveFib(6));
-console.log(recursiveFib(7));
+    console.log(recursiveFib(1));
+    console.log(recursiveFib(2));
+    console.log(recursiveFib(6));
+    console.log(recursiveFib(7));
 
+(2)Recursice Factorial number:-
+    number of a non-negative integer 'n'.
+    denoted n!, is the product of all positive integers, less than or equal to 'n'.
+    Factorial of zero is 1.
+    Factorial of one is 1.
+    factorial(4)=4*3*2*1 =24
+    factorial(5)=5*4*3*2*1 =120
+    Ex1:-
+    function factorial(n){
+          if(n==0)        //it will check each step(Maximum call stack size exceeded).
+          return 1;
+          else
+          return n* factorial(n-1);
+      } 
+      let num = 5;
+      const result = factorial(num);
+      console.log(result);                    //Big-O = O(n)
+      O/P:-120
+    
+    /*
+      Explaination:-When we the Factorial 5, it is going to stack.
+      When we call the factorial of 4, it will create one more entry in the stack.
+      Again it will new call factorial of 3,....so on.
+      like:-
+      factorial(1) -> it will return 1.
+      factorial(2) -> it will return 2.            :-It's recursion, function calling itself.
+      factorial(3) -> It will return 6.
+      factorial(4) -> It will return 24.
+      factorial(5) -> It will return 120.
+    */
+    --------------------------------------------------------------------------------------------
+    Ex2:-
+    /*
+    Write a recursive function, sum(arr, n), that returns the sum of the first n elements of an array arr.
+    Task:-
+    sum([1], 0) should equal 0.
+    Waiting:sum([2, 3, 4], 1) should equal 2.
+    Waiting:sum([2, 3, 4, 5], 3) should equal 9.
+    Waiting:Your code should not rely on any kind of loops (for or while or higher order functions such as forEach, map, filter, or reduce.).
+    Waiting:You should use recursion to solve this problem.
+    
+    Npte:-
+    function sum(arr, n) {
+      // Only change code below this line
+    
+      // Only change code above this line
+    }
+    */
+    sol:-
+    function sum(arr, n) {
+      // Base case: If n is 0, the sum is 0
+      if (n === 0) {
+        return 0;
+      } else {
+        // Recursive case: Return the sum of the first n-1 elements plus the nth element
+        return sum(arr, n - 1) + arr[n - 1];
+      }
+    }
+    
+    // Test cases
+    console.log(sum([1], 0));          // Output: 0
+    console.log(sum([2, 3, 4], 1));    // Output: 2
+    console.log(sum([2, 3, 4, 5], 3)); // Output: 9
+    
+    /*Explain:-
+    1. Base case:-
+      if (n === 0) {
+        return 0;
+      }
+      This is the base case of the recursive function. If n is equal to 0, it means there are no elements to sum, so the function returns 0.
+    2. Recursive case:-
+      return sum(arr, n - 1) + arr[n - 1];
+      If n is not 0, it's a recursive case. 
+      The function recursively calls itself with n - 1 to sum the first n - 1 elements and then adds the n-th element (arr[n - 1]) to the result.
+    3.Test case:-
+      console.log(sum([1], 0));          // Output: 0
+      console.log(sum([2, 3, 4], 1));    // Output: 2
+      console.log(sum([2, 3, 4, 5], 3)); // Output: 9
+      The first test case ([1], 0) has only one element, and since n is 0, the output is 0.
+      The second test case ([2, 3, 4], 1) sums the first 1 element, which is 2.
+      The third test case ([2, 3, 4, 5], 3) sums the first 3 elements, resulting in 2 + 3 + 4 = 9.
+    */

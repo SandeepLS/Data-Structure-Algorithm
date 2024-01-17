@@ -1,0 +1,63 @@
+Problem:-Given a positive integer 'n', determine if the number is a poer of 2 or not.
+Def:-An integer is a power of two, if there exists in integer 'x', such that 'n'===2x.
+Ex:
+isPowerOfTwo(1)= true(2 zero)
+isPowerOfTwo(2)= true(2 one)
+isPowerOfTwo(5)= false => after deviding the 5/2, we get remainder 1. so it is not power of two. 
+
+Power of two- Pseudocode:-
+Ex:n=8, power of 2.
+8/2= 4 =>quecient 4, Reminder 0.
+4/2= 2 =>quecient 2, Reminder 0.
+2/2= 1 =>quecient 1, Reminder 0.
+If remainder is not 0 in any step, n is not a power of two.
+If remainder is 0 & n comes down to 1 eventually, n is power of two.
+
+Ex:
+function isPowerTwo(n){
+    if(n < 1){
+        return false;
+    }
+    while(n > 1){
+        if(n % 2 !== 0){
+            return false;
+        }
+        n=n/2;
+    }
+    return true;
+}
+console.log(isPowerTwo(1));  //true
+console.log(isPowerTwo(2));  //true
+console.log(isPowerTwo(5));  //false
+---------------------------------------------------------------------------------------
+Ex:
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input:process.stdin,
+    output:process.stdout
+});
+
+function isPowerTwo(n){
+    if(n < 1){
+        return false;
+    }
+    while(n > 1){
+        if(n % 2 !== 0){
+            return false;
+        }
+        n=n/2;
+    }
+    return true;
+}
+
+rl.question("Enter the number:", function(userInput){
+    const n = userInput;
+    const result = isPowerTwo(n);
+    console.log(result);
+    rl.close();
+
+});
+
+
+

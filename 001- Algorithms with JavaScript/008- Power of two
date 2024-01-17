@@ -29,6 +29,7 @@ function isPowerTwo(n){
 console.log(isPowerTwo(1));  //true
 console.log(isPowerTwo(2));  //true
 console.log(isPowerTwo(5));  //false
+//Big-O = O(logn)
 ---------------------------------------------------------------------------------------
 Ex:
 const readline = require('readline');

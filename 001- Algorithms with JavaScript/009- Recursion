@@ -1,0 +1,24 @@
+Recursion:
+is when a function call itself.
+Why:A great technique to simplify your solution.
+Every recursion solution, need to solve a base case- A condition to terminate the recursion.
+
+(1)Recursive Fibonacci Sequence:-
+Fibonaccci sequence is sequence, Which each number us sum of the, two preceding ones.
+By default first two numbers present in sequence, they are 0 & 1.
+recursiveFibonacci(0)= 0
+recursiveFibonacci(1)= 1
+recursiveFibonacci(6)= 8
+
+Ex:
+function recursiveFib(n){
+    if(n < 2){
+        return n;
+    }
+    return recursiveFib(n-1) + recursiveFib(n-2);
+}
+console.log(recursiveFib(1));
+console.log(recursiveFib(2));
+console.log(recursiveFib(6));
+console.log(recursiveFib(7));
+

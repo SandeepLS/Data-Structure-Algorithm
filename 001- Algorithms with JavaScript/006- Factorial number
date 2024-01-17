@@ -39,3 +39,26 @@ rl.question("Enter a factorial num:", function(userInput){
     console.log(output);
     rl.close();
 })
+---------------------------------------OR--------------------------------------------
+function factorial(n){
+      if(n==0)        //it will check each step(Maximum call stack size exceeded).
+      return 1;
+      else
+      return n* factorial(n-1);
+  } 
+  let num = 5;
+  const result = factorial(num);
+  console.log(result);
+  O/P:-120
+
+/*
+  Explaination:-When we the Factorial 5, it is going to stack.
+  When we call the factorial of 4, it will create one more entry in the stack.
+  Again it will new call factorial of 3,....so on.
+  like:-
+  factorial(1) -> it will return 1.
+  factorial(2) -> it will return 2.            :-It's recursion, function calling itself.
+  factorial(3) -> It will return 6.
+  factorial(4) -> It will return 24.
+  factorial(5) -> It will return 120.
+*/

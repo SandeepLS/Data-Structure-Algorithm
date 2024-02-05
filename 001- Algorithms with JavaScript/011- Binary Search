@@ -1,0 +1,30 @@
+Binary Search:-
+If the array is empty, return -1, as the element cannot be found.
+
+If the array has element, find the middle element in the array,
+if target is-equal to middle element, return the middle element index.
+
+If target is less than the middle ele, Binary search left half of the array.
+If targt is greter than the middle ele, Binary search right half of the array.
+
+Ex:-
+function binarySearch(arr, target){
+    let leftindex = 0;
+    let rightindex = arr.length - 1;
+
+    while(leftindex <= rightindex){
+        let midindex = Math.floor((leftindex + rightindex) / 2);
+        if(target === arr[midindex]){
+            return midindex
+        }
+        if(target < arr[midindex]){
+            rightindex = midindex - 1
+        }else{
+            leftindex = midindex + 1
+        }
+    }
+    return -1
+}
+console.log(binarySearch([-5, 2, 10, 26], 26));
+console.log(binarySearch([2, 10, 26, 81], 81));
+console.log(binarySearch([2, 10, 26, 8], 8));

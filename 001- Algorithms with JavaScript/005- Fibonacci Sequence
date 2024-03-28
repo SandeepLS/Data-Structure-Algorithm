@@ -1,5 +1,5 @@
 Fibonacci Sequence:- is a sequence, Which each number is sum of the, two preceding ones.
-                    -The first two numbers, in the sequence are 0 & 1.
+                    -The first two numbers default, in the sequence are 0 & 1.
 Example:-
 -fibonacci(2) => [0, 1]
 -fibonacci(3) => [0, 1, 1]

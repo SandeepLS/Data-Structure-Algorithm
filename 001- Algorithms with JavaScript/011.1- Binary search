@@ -1,0 +1,50 @@
+function binarySearch(arr, target) {
+    let left = 0;
+    let right = arr.length - 1;
+
+    // Continue searching as long as the left index is less than or equal to the right index
+    while (left <= right) {
+        // Calculate the middle index
+        let mid = Math.floor((left + right) / 2);
+
+        // If the target is found at the middle index
+        if (arr[mid] === target) {
+            return mid; // Return the index of the target
+        }
+
+        // If the target is greater than the middle element, ignore the left half
+        if (arr[mid] < target) {
+            left = mid + 1;
+        }
+        // If the target is smaller than the middle element, ignore the right half
+        else {
+            right = mid - 1;
+        }
+    }
+
+    // If the target is not found in the array, return -1
+    return -1;
+}
+
+function findTargetIndex(arr, target) {
+    // Call binarySearch to find the index of the target in the array
+    const index = binarySearch(arr, target);
+
+    // If the index is not -1, print the index of the target
+    if (index !== -1) {
+        console.log(`Element found at Index ${index}`);
+    } 
+    // Otherwise, print "Element Not Found"
+    else {
+        console.log("Element Not Found");
+    }
+}
+
+// Test cases
+const arr1 = [2, 3, 5, 7, 9];
+const target1 = 7;
+findTargetIndex(arr1, target1); // Output: Element found at Index 3
+
+const arr2 = [1, 4, 5, 8, 9];
+const target2 = 7;
+findTargetIndex(arr2, target2); // Output: Element Not Found

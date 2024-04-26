@@ -1,0 +1,116 @@
+/*
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+Example 1:
+Input: s = "anagram", t = "nagaram"
+Output: true
+
+Example 2:
+Input: s = "rat", t = "car"
+Output: false
+
+Constraints:
+1 <= s.length, t.length <= 5 * 104
+s and t consist of lowercase English letters.
+
+Using HashMap:- two anagram(S, T)
+char & count
+ s     T
+a 3   a 3
+n 1   n 1
+g 1   g 1
+r 1   r 1
+m 1   m 1
+comparing each values.
+*/
+
+Ex:-
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+    if (s.length !== t.length) return false;
+  const sCount = {};
+  const tCount = {};
+  const N = s.length;
+  for (let i = 0; i < N; i++) {
+    //This line checks if the current character s[i] in the string s is not already a key in the sCount object.
+      If s[i] is not present in sCount, it initializes sCount[s[i]] to 0. This step ensures that each character encountered in the string s is represented as a key in the sCount object.
+    if (!sCount[s[i]]) sCount[s[i]] = 0;
+    if (!tCount[t[i]]) tCount[t[i]] = 0;
+    sCount[s[i]]++;
+    tCount[t[i]]++;
+  }
+  for (let ch in sCount) {
+    if (sCount[ch] !== tCount[ch]) return false;
+  }
+  return true;
+};
+const result = isAnagram("san", "nas");
+console.log(result);
+
+
+/*
+The function first checks if the lengths of the two input strings s and t are not equal. 
+If they are not equal, it immediately returns false, as strings of different lengths cannot be anagrams of each other.
+
+Two empty objects sCount and tCount are initialized to store the count of characters in the strings s and t, respectively.
+
+The function iterates over each character of the strings s and t using a loop that runs N times, 
+where N is the length of the string s. During each iteration, it updates the counts of characters in the respective count objects.
+
+if (!sCount[s[i]]) sCount[s[i]] = 0;:
+This line checks if the current character s[i] in the string s is not already a key in the sCount object.
+If s[i] is not present in sCount, it initializes sCount[s[i]] to 0. This step ensures that each character encountered in the string s is represented as a key in the sCount object.
+
+if (sCount[ch] !== tCount[ch]) return false;: 
+Within each iteration of the loop, 
+this line checks if the count of the current character ch in the sCount object is not equal to the count of the same character in the tCount object.
+
+After iterating over all characters in both strings, the function compares the counts of characters in the sCount and tCount objects. 
+If the counts for any character are not equal between the two objects, it returns false, indicating that the strings s and t are not anagrams of each other.
+
+If the counts for all characters are equal between the two objects, the function returns true, indicating that t is indeed an anagram of s.
+
+The code uses a HashMap-like approach to count the occurrences of characters in both strings, 
+ensuring that each character appears the same number of times in both strings for them to be considered anagrams. 
+This approach has a time complexity of O(n), where n is the length of the input strings s and t.
+*/
+------------------------------------------------------------------------------------------------------------------------------------------------------
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+// Function to check if t is an anagram of s
+var isAnagram = function(s, t) {
+    if (s.length !== t.length) return false;
+    const sCount = {};
+    const tCount = {};
+    const N = s.length;
+    for (let i = 0; i < N; i++) {
+        if (!sCount[s[i]]) sCount[s[i]] = 0;   //if s[i] value, is not in sCount object, then we should initialize it to 0.
+        if (!tCount[t[i]]) tCount[t[i]] = 0;
+        sCount[s[i]]++;
+        tCount[t[i]]++;
+    }
+    for (let ch in sCount) {
+        if (sCount[ch] !== tCount[ch]) return false;
+    }
+    return true;
+};
+
+rl.question('Enter string s: ', (sInput) => {
+    rl.question('Enter string t: ', (tInput) => {
+        const result = isAnagram(sInput, tInput);
+        console.log(`Output: ${result}`);
+        rl.close();
+    });
+});
+Enter string s: san
+Enter string t: nas
+Output: true

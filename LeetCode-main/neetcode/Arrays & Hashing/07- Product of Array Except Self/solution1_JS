@@ -1,0 +1,32 @@
+var productExceptSelf = function(nums) {
+    let res = [1];
+
+    for(let i=1;i<nums.length;i++){
+        res.push(res[i-1]*nums[i-1]) //previous prefix to previous value, find current prefix.
+    }
+
+    let suffProd = 1;
+    for(let i=nums.length-2;i>=0;i--){  //previous suffix to previous value, find current suffix.
+        suffProd *= nums[i+1];
+        res[i] = res[i]*suffProd;
+    }
+    return res;
+};
+/**
+Ex: [2,3,4,5]
+
+division: 
+120
+[60,40,30,24]
+
+prefix & sufix:-
+prefix: [1,2,6,24]
+sufix: [60,20,5,1]
+result:[60,40,30,24]
+
+TC:O(n)
+SC:O(n)
+if we reduce the SC, yes we can
+TC:O(n) =>Linear
+SC:O(1) =>constant
+ */

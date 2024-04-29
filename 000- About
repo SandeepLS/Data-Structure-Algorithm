@@ -15,4 +15,6 @@ Complexity:-if a program written in a efficient or not. in that case we use Comp
 Both of the above complexities are measured with respect to the input parameters.
 Auxiliary Space very commonly in DSA, which refers to the extra space used in the program.
 
+DS:-In the computer world, How to organize the information, & hold it into the memory is called DS.
+    There are several ways to organize the data, Ex:- In sequential(Array), Links one node to another(LinkedList) & Tress.
 

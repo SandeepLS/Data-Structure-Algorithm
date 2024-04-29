@@ -18,3 +18,6 @@ Auxiliary Space very commonly in DSA, which refers to the extra space used in th
 DS:-In the computer world, How to organize the information, & hold it into the memory is called DS.
     There are several ways to organize the data, Ex:- In sequential(Array), Links one node to another(LinkedList) & Tress.
 
+Algorithum:- In software industries we have some information, from that information we will get some insite, will do some analysis.
+             Ex:- We will book cab in OLA or Uber, we will find the nearest cab driver from our location, in that case we need one algorithum.    
+Algorithum is nothing but, set of steps, we should follw this type of step, then we will get solution.

@@ -1,0 +1,15 @@
+https://www.geeksforgeeks.org/learn-data-structures-with-javascript-dsa-tutorial/
+LL:- is a linear Data structure, unlike array, LL are not stored at a contiguous memory location,
+     It is bascically chain of node, each node contains information like data & a pointer to next node in the chain.
+     There is a head pointer, where points to the first element of the LL.
+
+(1)Single LL:-Navigation is Forward only.
+(2)Doubly LL:-Forward & Backward navigation is possible.
+(3)Circular LL:-Last element is linked to the First element.
+
+(1)Single LL:- is a list made up of nodes, that consist of two parts.
+Ex:- suppose we want to store a list numbers: 23, 54, 78, 90
+Head
+1000
+      23|2000    54|3000    78|4000    90|NULL
+       1000        2000      3000       4000

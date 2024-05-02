@@ -1,5 +1,7 @@
-Def:-Prime number is a natural number, greter then 1,
+Def:- Which can be divisible by 1 & Byitself.
+Prime number is a natural number, greter then 1,
 that is not a product of two smaller natural numbers.
+Explai:-
 isPrime(5)= true(1*5 or 5*1)
 isPrime(4)= false(1*4 or 2*2 or 4*1)
               OR
@@ -31,7 +33,7 @@ function isPrime(n){
     }
     for(let i=2; i<n; i++){
         if(n % i ===0){
-            return false;
+            return false;    //If n is divisible by i (i.e., the remainder is zero), it means n is not a prime number, so the function immediately returns false.
         }
     }
     return true;

@@ -3,3 +3,10 @@ An array is a data structure, that can hold collection of values.
 Arrays can contains a mix of different data types. you can store string, boolean, numbers or even objecta all in the same array.
 Array are resizable, you don't have to declare the size of an array before creating it.
 Arrays are iterables, They can be used with a for of loop.
+
+Array is a collection of items.
+Ex:-let marks = [34, 23, 23, 78, 98];
+    console.log(marks);
+
+Object:- is a collection of properties. and property is an association between Key(Name) & value.
+Ex:-const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};

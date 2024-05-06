@@ -37,3 +37,25 @@ Ex:-
     console.log(house)    //[ 10, 20, 30, 40, 50 ]
     console.log(house1)   //[ <5 empty items> ]
     console.log(home)     //[ '1BHK' ]
+---------------------------------------------------------------------------------------------------------------
+Basic methods in array:-
+->If you want to add an element, in begining.
+    Ex:- const arr = [1,2,3,4,"sandeep"];
+         arr.unshift(0)
+         console.log(marks)
+
+->delete in begining => marks.shift();
+
+->add in end.
+    Ex:-let marks = [32, 45, 67, 78, 65];
+        marks.push(4);
+        console.log(marks)
+
+->delete in end => marks.pop();
+
+-> Display all element.
+    Ex:-
+    let marks = [32, 45, 67, 78, 65];
+    for(const item of marks){
+        console.log(item)
+    }

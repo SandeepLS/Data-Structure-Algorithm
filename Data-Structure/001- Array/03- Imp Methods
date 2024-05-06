@@ -1,0 +1,22 @@
+-> map()
+  Create a new arry, from calling a function for every array element.
+  Map() does not execute the function, for empty element.
+  Map() does not change the original arry.
+  
+  Ex:-
+  const number = [4,9,16,25];
+  const newArr = number.map(Math.sqrt);
+  console.log(newArr) //OP:-[ 2, 3, 4, 5 ]
+  
+  Ex:-
+  const number = [4,9,16,25];
+  const newArr = number.map(myFunction);
+  function myFunction(num){
+      return num * 10;
+  
+  }
+  console.log(newArr) //O/P:-[ 40, 90, 160, 250 ]
+
+->Filter
+->concat
+->reduce

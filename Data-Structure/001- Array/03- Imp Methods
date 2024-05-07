@@ -1,4 +1,4 @@
--> map()
+-> map():-
   Create a new arry, from calling a function for every array element.
   Map() does not execute the function, for empty element.
   Map() does not change the original arry.
@@ -13,10 +13,65 @@
   const newArr = number.map(myFunction);
   function myFunction(num){
       return num * 10;
-  
   }
   console.log(newArr) //O/P:-[ 40, 90, 160, 250 ]
 
-->Filter
-->concat
-->reduce
+->filter():-
+  Create a new array, filled with elements that pass a test, provided by a function.
+  Ex:-Filter the ages.
+  const ages = [87,23,45,13,34];
+  const newArr = ages.filter(myAdult);
+  
+  function myAdult(age){
+      return age>=18;
+  }
+  console.log(newArr)
+  
+  Ex:-
+  <p id="demo"></p>
+  <script>
+  const ages = [32, 33, 16, 40];
+  document.getElementById("demo").innerHTML = ages.filter(checkAdult);
+  
+  function checkAdult(age) {
+    return age >= 18;
+  }
+  </script>
+
+->concat():-
+  Concatenates two or more arrays.
+  Ex:-
+  const arr1 = ["sandee","sachin"];
+  const arr2 = ["rohan","ganesh","dilip"];
+  const arr3 = ["nikhil"];
+  
+  const children = arr1.concat(arr2, arr3);
+  console.log(children);
+
+->reduce:-
+  The reduce() method executes a reducer function for array element.
+  Ex:-
+  const numbers = [175, 50, 25];
+  const result = numbers.reduce(myFunc);
+  
+  function myFunc(total, num) {
+    return total - num;
+  }
+  console.log(result)
+
+->slice():-
+  The slice() method returns selected elements in an array, as a new array.
+  Ex:-
+  const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+  const citrus = fruits.slice(1, 3);
+  console.log(citrus)
+
+->splice():-
+  The splice() method adds and/or removes array elements.
+  Ex:-
+  // Create an Array
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  
+  // At position 2, add "Lemon" and "Kiwi":
+  fruits.splice(2,0, "Lemon","kiwi")
+  console.log(fruits)      //[ 'Banana', 'Orange', 'Lemon', 'kiwi', 'Apple', 'Mango' ]

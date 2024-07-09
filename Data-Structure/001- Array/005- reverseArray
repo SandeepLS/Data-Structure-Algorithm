@@ -1,0 +1,14 @@
+(i)
+let array = [1, 2, 3, 4, 5];
+array.reverse();
+console.log(array);  // Output: [5, 4, 3, 2, 1]
+//The reverse() method reverses the elements of the array in place and returns the reversed array.
+
+(ii)
+//If you want to create a new array with the reversed elements without modifying the original array,
+you can use the slice() method to create a shallow copy of the array first:
+
+let array = [1, 2, 3, 4, 5];
+let reversedArray = array.slice().reverse();
+console.log(reversedArray);  // Output: [5, 4, 3, 2, 1]
+console.log(array);  // Output: [1, 2, 3, 4, 5]

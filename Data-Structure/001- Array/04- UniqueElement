@@ -1,3 +1,5 @@
+//A Set in JavaScript automatically removes duplicate values when created from an array.
+
 function findUniqueElements(arr) {
     // Create a Set from the array to remove duplicates
     let uniqueElements = new Set(arr);

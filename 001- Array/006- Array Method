@@ -7,8 +7,8 @@
   document.getElementById("demo").innerHTML = size;
   </script>
 
-2)toString:- convert an array to, string of array values.
-  Ex:-
+2)toString():- convert an array to, string of array values.
+  Ex:
   <p id="demo"></p>
   <script>
   const fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -16,4 +16,82 @@
   document.getElementById("demo").innerHTML = size;
   </script>
 
-3)
+3)at():-Get the third element of fruits using at()
+  Ex:
+  <p id="demo"></p>
+  <script>
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  let fruit = fruits[2]; or let fruit = fruits.at(2);
+  document.getElementById("demo").innerHTML = fruit;
+  </script>
+
+4)join():-The join() method also joins all array elements into a string.
+  Ex:
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  document.getElementById("demo").innerHTML = fruits.join(" * ");
+
+5)pop():-The pop() method removes the last element from an array:
+  Ex:
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  fruits.pop();
+
+6)push():-The push() method adds a new element to an array (at the end):
+  Ex:
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  fruits.push("Kiwi");
+
+7)shift():-The shift() method removes the first array element.
+  Ex:
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  fruits.shift();
+
+8)unshift():-The unshift() method adds a new element to an array (at the beginning).
+  Ex:
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  fruits.unshift("Lemon");
+-----------------------------------------------------------------------------------
+Changing Elements
+Array elements are accessed using their index number:
+
+Array indexes start with 0:
+[0] is the first array element
+[1] is the second
+[2] is the third ...
+------------------------------------------------------------------------------------
+delete:-
+  <script>
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  document.getElementById("demo1").innerHTML ="The first fruit is: " + fruits[0];
+  delete fruits[0];
+  document.getElementById("demo2").innerHTML ="The first fruit is: " + fruits[0];
+  </script>
+  O/P:-
+  The first fruit is: Banana
+  The first fruit is: undefined
+
+9)concat():- The concat() method creates a new array by merging (concatenating) existing arrays:
+  Ex:
+  <script>
+  const myGirls = ["Cecilie", "Lone"];
+  const myBoys = ["Emil", "Tobias", "Linus"];
+  const myChildren = myGirls.concat(myBoys);
+  document.getElementById("demo").innerHTML = myChildren;
+  </script>
+
+  The concat() method does not change the existing arrays. It always returns a new array.
+  The concat() method can take any number of array arguments.
+  <script>
+  const array1 = ["Cecilie", "Lone"];
+  const array2 = ["Emil", "Tobias", "Linus"];
+  const array3 = ["Robin", "Morgan"];
+  
+  const myChildren = array1.concat(array2, array3); 
+  document.getElementById("demo").innerHTML = myChildren;
+  </script>
+
+  The concat() method can also take strings as arguments:
+  const myArray = ["Emil", "Tobias", "Linus"];
+  const myChildren = myArray.concat("Peter"); 
+  document.getElementById("demo").innerHTML = myChildren;
+
+

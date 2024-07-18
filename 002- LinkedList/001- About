@@ -1,0 +1,7 @@
+LinkedList:- is the dynamic data structure, as we can add or remove elements at ease, and it can even grow as needed.
+Just like arrays, linked lists store elements sequentially, but don’t store the elements contiguously like an array. 
+
+Dynamic data structure: the size of the structure is not fixed and can be modified during the operations performed on it.
+A sequential: file is a type of data storage file, where records are arranged and we can accessed in a specific order, 
+contiguously: one thing touching another thing, or next to it but not actually touching.
+

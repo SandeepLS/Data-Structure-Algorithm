@@ -1,10 +1,39 @@
 Array:-
-An array is a data structure, that can hold collection of values.
-Arrays can contains a mix of different data types. you can store string, boolean, numbers or even objecta all in the same array.
-Array are resizable, you don't have to declare the size of an array before creating it.
-Arrays are iterables, They can be used with a for of loop.
+*An array is a data structure, that can hold collection of values.
+*Arrays can contains a mix of different data types. you can store string, boolean, numbers or even objecta all in the same array.
+    Ex:-let mixedArray = ["Hello", 42, true, { name: "Alice", age: 30 }];
 
-Array is a collection of items.
+*Array are resizable, you don't have to declare the size of an array before creating it.
+    Ex:-
+    let resizableArray = []; // Declare an empty array
+    // Add elements to the array
+    resizableArray.push("First Element");
+    resizableArray.push(100);
+    resizableArray.push(false);
+    resizableArray.push({ key: "value" });
+    
+    // The array is now resizableArray = ["First Element", 100, false, { key: "value" }]
+    console.log(resizableArray); // Output: ["First Element", 100, false, { key: "value" }]
+    
+    // Remove an element from the array
+    resizableArray.pop(); // Removes the last element
+    
+    // The array is now resizableArray = ["First Element", 100, false]
+    console.log(resizableArray); // Output: ["First Element", 100, false]
+
+*Arrays are iterables, They can be used with a for of loop.
+    Ex:-
+    let iterableArray = ["apple", 42, true, { name: "Alice", age: 30 }];    //array containing different types of elements.
+    for (let element of iterableArray) {    //The for...of loop iterates over each element in the array.
+      console.log(element);
+    }
+    O/P:-
+    apple
+    42
+    true
+    { name: 'Alice', age: 30 }
+
+*Array is a collection of items.
 Ex:-let marks = [34, 23, 23, 78, 98];
     console.log(marks);
 
@@ -16,6 +45,9 @@ Array:- An array is a collection of items, of the same variable type stored,
 syntax:-
 let arrayName = [value1, value2, ...]; // Method 1
 let arrayName = new Array(); // Method 2
+    Ex:-
+    let arrayName = new Array(); // Creates an empty array
+    console.log(arrayName); // Output: []
 
 Types of Array operations:-
 Traversal: Traverse through the elements of an array.

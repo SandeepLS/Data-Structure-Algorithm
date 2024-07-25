@@ -1,7 +1,43 @@
 LinkedList:- is the dynamic data structure, as we can add or remove elements at ease, and it can even grow as needed.
 Just like arrays, linked lists store elements sequentially, but don’t store the elements contiguously like an array. 
 
+/*
 Dynamic data structure: the size of the structure is not fixed and can be modified during the operations performed on it.
+
 A sequential: file is a type of data storage file, where records are arranged and we can accessed in a specific order, 
+    Definition: Items arranged sequentially follow a specific order, one after another. This order can be based on time, position, or any other logical sequence.
+    Example in Tasks: Tasks performed sequentially mean one task is completed before the next one begins.
+    Suppose you have a list of tasks to complete in a day:
+    Task 1: Wake up
+    Task 2: Brush teeth
+    Task 3: Have breakfast
+    Task 4: Go to work
+    Task 5: Come back home
+    Task 6: Have dinner
+    Task 7: Go to sleep
+
 contiguously: one thing touching another thing, or next to it but not actually touching.
+    Definition: Items arranged contiguously are physically adjacent to each other without any gaps.
+    Example:-Suppose we have an array of integers:
+    int arr[5] = {10, 20, 30, 40, 50};
+    
+    Let's assume each integer takes up 4 bytes in memory. 
+    The array arr will be stored in a contiguous block of memory, 
+    meaning each element is stored directly next to the previous one without any gaps. 
+    Here's a simplified memory layout:
+    Address	Value
+    1000	10
+    1004	20
+    1008	30
+    1012	40
+    1016	50
+    
+    yaml
+    | 1000 | 1004 | 1008 | 1012 | 1016 |
+    |  10  |  20  |  30  |  40  |  50  |
+    In this example, the memory addresses are contiguous, 
+    meaning there are no gaps between the memory locations of each element of the array. 
+    Each subsequent element is placed directly after the previous one, reflecting contiguous memory allocation.
+
+
 

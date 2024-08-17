@@ -1,0 +1,9 @@
+/*
+myStr should have a single space character between the two strings.
+Passed:myStr should have a value of the string This is the start. This is the end.
+Passed:You should use the + operator to build myStr.
+Passed:myStr should be created using the const keyword.
+Passed:You should assign the result to the myStr variable.
+*/
+Ex:
+const myStr = "This is the start. " + "This is the end."; // Change this line

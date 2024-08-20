@@ -1,0 +1,9 @@
+/*
+Test Case:
+myArray should be an array.
+Passed:The first item in myArray should be a string.
+Passed:The second item in myArray should be a number.
+*/
+
+// Only change code below this line
+const myArray = ["Sandeep", 1];

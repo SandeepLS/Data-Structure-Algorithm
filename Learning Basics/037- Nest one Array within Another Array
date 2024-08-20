@@ -1,0 +1,2 @@
+//myArray should have at least one array nested within another array.
+const myArray = [["Sandeep", 23], ["Sachin", 28]];

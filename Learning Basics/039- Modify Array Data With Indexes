@@ -1,0 +1,10 @@
+/*
+myArray should now be [45, 64, 99].
+Passed:You should be using correct index to modify the value in myArray.
+*/
+Ex:
+// Setup
+const myArray = [18, 64, 99];
+
+// Only change code below this line
+myArray[0] = 45;

@@ -1,0 +1,14 @@
+/*
+pop() always removes the last element of an array. What if you want to remove the first?
+That's where .shift() comes in. It works just like .pop(), except it removes the first element instead of the last.
+
+Test case:
+Passed:myArray should now equal [["dog", 3]].
+Passed:removedFromMyArray should contain ["John", 23].
+*/
+Ex:
+// Setup
+const myArray = [["John", 23], ["dog", 3]];
+
+// Only change code below this line
+const removedFromMyArray= myArray.shift();

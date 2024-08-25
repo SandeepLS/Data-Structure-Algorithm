@@ -1,0 +1,14 @@
+/*
+Test case:
+Passed:myList should be an array.
+Passed:The first elements in each of your sub-arrays should all be strings.
+Passed:The second elements in each of your sub-arrays should all be numbers.
+Passed:You should have at least 5 items in your list.
+*/
+const myList = [
+  ["Sandeep", 24],
+  ["Sachin", 28],
+  ["Vanajakshi", 50],
+  ["Shrinivas", 63],
+  ["Nikhil", 24]
+];

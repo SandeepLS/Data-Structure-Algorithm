@@ -1,0 +1,12 @@
+/*
+functionWithArgs should be a function.
+Passed:functionWithArgs(1,2) should output 3.
+Passed:functionWithArgs(7,9) should output 16.
+Passed:You should call functionWithArgs with two numbers after you define it.
+*/
+//EX:
+function functionWithArgs(a,b){
+  console.log(a+b);
+}
+functionWithArgs(1,2);
+functionWithArgs(7,9);

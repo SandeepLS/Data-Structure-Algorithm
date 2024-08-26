@@ -1,0 +1,16 @@
+/*
+We can pass values into a function with arguments. You can use a return statement to send a value back out of a function.
+
+Test case:
+timesFive should be a function
+Passed:timesFive(5) should return 25
+Passed:timesFive(2) should return 10
+Passed:timesFive(0) should return 0
+*/
+Ex:
+function timesFive(num){
+  return num * 5;
+}
+timesFive(5)
+timesFive(2)
+timesFive(0)

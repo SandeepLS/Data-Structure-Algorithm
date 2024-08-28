@@ -9,8 +9,7 @@ Waiting:After nextInLine(testArr, 10), testArr[4] should be 10
 function nextInLine(arr, item) {
   // Only change code below this line
   arr.push(item);
-  arr.shift();
-  return item;
+  return arr.shift(item);
   // Only change code above this line
 }
 
@@ -25,6 +24,10 @@ console.log("After: " + JSON.stringify(testArr));
 /*
 O/P:-
 Before: [1,2,3,4,5]
-6
+undefine
+After: [1,2,3,4,5]
+--------------------------
+Before: [1,2,3,4,5]
+1
 After: [2,3,4,5,6]
 */

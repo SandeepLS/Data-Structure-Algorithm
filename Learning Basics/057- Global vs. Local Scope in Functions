@@ -1,0 +1,16 @@
+/*
+Test case:
+Passed:You should not change the value of the global outerWear.
+Passed:myOutfit should return the string sweater.
+Passed:You should not change the return statement.
+*/
+Ex:
+const outerWear = "T-Shirt";
+
+function myOutfit() {
+  // Only change code below this line
+  const outerWear = "sweater";
+  // Only change code above this line
+  return outerWear;
+}
+myOutfit();  //sweater

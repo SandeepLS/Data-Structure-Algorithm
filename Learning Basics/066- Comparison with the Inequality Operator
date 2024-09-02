@@ -1,0 +1,28 @@
+/*
+The inequality operator (!=) is the opposite of the equality operator. 
+It means not equal and returns false where equality would return true and vice versa.
+
+Examples
+1 !=  2    // true
+1 != "1"   // false
+1 != '1'   // false
+1 != true  // false
+0 != false // false
+
+Add the inequality operator != in the if statement so that the function will return the string Not Equal when val is not equivalent to 99.
+
+Test case:
+Passed:testNotEqual(99) should return the string Equal
+Passed:testNotEqual("99") should return the string Equal
+Passed:testNotEqual(12) should return the string Not Equal
+Passed:testNotEqual("12") should return the string Not Equal
+Passed:testNotEqual("bob") should return the string Not Equal
+Passed:You should use the != operator
+*/
+function testNotEqual(val) {
+  if (val != 99) { // Change this line
+    return "Not Equal";
+  }
+  return "Equal";
+}
+testNotEqual(10);

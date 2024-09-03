@@ -19,11 +19,11 @@ Waiting:testLessThan(99) should return the string 55 or Over
 Waiting:You should use the < operator at least twice
 */
 function testLessThan(val) {
-  if (val) {  // Change this line
+  if (val < '25') {  // Change this line
     return "Under 25";
   }
 
-  if (val) {  // Change this line
+  if (val < 55) {  // Change this line
     return "Under 55";
   }
   return "55 or Over";

@@ -1,0 +1,21 @@
+/*
+Tests
+Passed:You should use the && operator once
+Passed:You should only have one if statement
+Passed:testLogicalAnd(0) should return the string No
+Passed:testLogicalAnd(24) should return the string No
+Passed:testLogicalAnd(25) should return the string Yes
+Passed:testLogicalAnd(30) should return the string Yes
+Passed:testLogicalAnd(50) should return the string Yes
+Passed:testLogicalAnd(51) should return the string No
+Passed:testLogicalAnd(75) should return the string No
+Passed:testLogicalAnd(80) should return the string No
+*/
+function testLogicalAnd(val) {
+  if (val <= 50 && val >= 25) {
+    
+      return "Yes";
+  }
+  return "No";
+}
+testLogicalAnd(10);

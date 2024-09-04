@@ -1,0 +1,23 @@
+/*
+Test case:-
+Passed:You should only have one if statement in the editor
+Passed:You should use an else statement
+Passed:testElse(4) should return the string 5 or Smaller
+Passed:testElse(5) should return the string 5 or Smaller
+Passed:testElse(6) should return the string Bigger than 5
+Passed:testElse(10) should return the string Bigger than 5
+Passed:You should not change the code above or below the specified comments.
+*/
+function testElse(val) {
+  let result = "";
+
+  if (val > 5) {
+    result = "Bigger than 5";
+  }else {
+    result = "5 or Smaller";
+  }
+
+  return result;
+}
+
+testElse(4);

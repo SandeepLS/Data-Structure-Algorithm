@@ -52,3 +52,18 @@ const twoSum = function(nums, target){
 } 
 const res = twoSum([1,2,3,4], 7);
 console.log(res);   //[ 2, 3 ]
+
+/*
+The solution we implemented is a brute-force approach. In this method,
+we are using two nested loops to check all possible pairs of numbers in the array to see if they add up to the target value.
+This approach is straightforward but not the most efficient for large inputs, as it has a time complexity of O(n²),
+where n is the number of elements in the array.
+
+Here’s a breakdown of the brute-force method:
+  Outer loop (i): Iterates through each element in the array.
+  Inner loop (j): Iterates through the elements after i to check if any pair of numbers adds up to the target.
+  Check condition: If nums[i] + nums[j] === target, it returns the indices [i, j].
+
+This solution works, but it could be optimized using a hash map (or object) to achieve a better time complexity of O(n). 
+Would you like to see an optimized solution?
+*/

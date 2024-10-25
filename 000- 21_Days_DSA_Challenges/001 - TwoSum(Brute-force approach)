@@ -42,16 +42,16 @@ Ex:-
 
 const twoSum = function(nums, target){
     for(let i=0;i<nums.length;i++){
-        for(let j=i+1;j<nums.length;j++){
-            if(nums[i] + nums[j] === target){
-                return [i,j];
-            }
+      for(let j=i+1;j<nums.length;j++){
+        if(nums[i] + nums[j] == target){
+          return [i, j];
         }
+      }
     }
     return false;
-} 
-const res = twoSum([1,2,3,4], 7);
-console.log(res);   //[ 2, 3 ]
+  }
+  const res = twoSum([1,2,3,4], 5);
+  console.log(res);   //[ 0, 3 ]  //TimeComplexity = O(n2).
 
 /*
 The solution we implemented is a brute-force approach. In this method,

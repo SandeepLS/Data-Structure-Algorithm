@@ -26,6 +26,9 @@ Problem:-
 //     l      .r
 //         l  .r
 
+Note: forloop: is gooing to be increment i, l, r. Other side
+      Whileloop: is gooing to be shifted left or right side.
+
 var twoSumSorted = function(numbers, target) {
   let l = 0;
   let r = numbers.length - 1;

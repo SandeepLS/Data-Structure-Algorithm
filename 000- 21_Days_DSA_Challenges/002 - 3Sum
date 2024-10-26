@@ -60,5 +60,5 @@ var threeSum = function (nums) {
 };
 
 const res = threeSum([-1, 0, 1, 2, -1, -4]);
-console.log(res);
+console.log(res);        //[ [ -1, -1, 2 ], [ -1, 0, 1 ] ]
 

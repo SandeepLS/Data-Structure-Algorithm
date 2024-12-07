@@ -3,11 +3,11 @@ Algorithm:- Is accessing data-structure for some operation.
 
 Example: Imagine, if am going to a goa trip, we need to pack for 3 days cloths,
 In our suitcase, we need to hold multiple data like shirts, pant, sheos anything, known as Data-Structure.
-If i want to fetch a shirt in suitcase & we need to find the shirt like,
-all green colour should be together, all read colur should be together, the item is organize together,
-known as Algorithm. It helps you access the data-structure.
+If i want to fetch a shirt in my suitcase & first i need to find-out the shirt like,
+all green colour-shirt, should be together, all read colour-shirt should be together, the item is organize together,
+known as Algorithm. It helps we access the data-structure.
 
 If i have some data,
-how do i store it efficiently,
+how do i store it efficiently, &
 how do i retrive the data correctly,
 That is what Data-Structure & Algorithm.

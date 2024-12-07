@@ -1,0 +1,5 @@
+Array: 
+  is contigueos blocks of memory, where each block hold some data.
+  Array are index data-structure, each blocks have index.
+  ex: we want to store some list of data.
+  const array = ["san", "man", "kanrna"];

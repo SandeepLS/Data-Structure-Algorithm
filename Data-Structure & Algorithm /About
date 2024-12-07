@@ -3,7 +3,7 @@ Algorithm:- Is accessing data-structure for some operation.
 
 Example: Imagine, if am going to a goa trip, we need to pack for 3 days cloths,
 In our suitcase, we need to hold multiple data like shirts, pant, sheos anything, known as Data-Structure.
-If i want to fetch a shirt & we need to find the shirt like,
+If i want to fetch a shirt in suitcase & we need to find the shirt like,
 all green colour should be together, all read colur should be together, the item is organize together,
 known as Algorithm. It helps you access the data-structure.
 

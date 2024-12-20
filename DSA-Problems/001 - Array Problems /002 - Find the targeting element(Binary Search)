@@ -41,5 +41,22 @@ console.log("Index array:",result);
 ->
 TimeComplexity: O(log n)
 Space coplexity: O(n log n)
-
+-----------------------------
+Time Complexity
+Best case: O(1), when the target is found at the first check.
+Average/Worst case: O(logn), since the search range halves after every iteration.
 */
+
+How It Works
+Let’s use an example: Input: arr = [1, 3, 5, 7, 9], target = 7
+1. Initialization: left = 0, right = 4.
+2. First Iteration:
+    > mid = Math.floor((0 + 4) / 2) = 2.
+    > arr[mid] = 5, which is less than 7.
+    > Update left = mid + 1 = 3.
+
+3. Second Iteration:
+    > mid = Math.floor((3 + 4) / 2) = 3.
+    > arr[mid] = 7, which matches the target.
+    > Return mid = 3.
+Output: 3 (the index of 7 in the array).

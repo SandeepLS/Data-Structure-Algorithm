@@ -31,6 +31,7 @@ console.log("Index array:",result);
 
 --------------------------------------------------------------------------------------------------
 /**
+-> since binary search requires a sorted array, we sort the rollNo array using Array.prototype.sort() with a comparison function.
 -> rollNo.slice(): Creates a shallow copy of the rollNo array.
 -> .sort((a, b) => a - b): sorts the copied array in ascending order (from smallest to largest).
     The .sort() method takes a comparison function as an argument.

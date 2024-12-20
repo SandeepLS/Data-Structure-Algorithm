@@ -1,0 +1,45 @@
+//Find the targeting element(Binary Search)
+
+const roll = [1, 4, 6, 2, 5, 3, 8];
+const target = 5;
+
+function binarySearch(arr, target){
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (left <= right) {
+        const mid = Math.floor((left + right) / 2);
+
+        if (arr[mid] === target) {
+            return mid; // Return the index if the target is found
+        } else if (arr[mid] < target) {
+            left = mid + 1; // Move to the right half
+        } else {
+            right = mid - 1; // Move to the left half
+        }
+    }
+
+    return -1; // Return -1 if the target is not found
+}
+
+const sortedRollNo = roll.slice().sort((a, b) => a-b);  //Sorted array
+
+const result = binarySearch(sortedRollNo, target);
+
+console.log("Sorted array:", sortedRollNo);
+console.log("Index array:",result);
+
+--------------------------------------------------------------------------------------------------
+/**
+-> rollNo.slice(): Creates a shallow copy of the rollNo array.
+-> .sort((a, b) => a - b): sorts the copied array in ascending order (from smallest to largest).
+    The .sort() method takes a comparison function as an argument.
+    The comparison function receives two elements (a and b) at a time and compares them:
+    If a - b is negative (i.e., a is smaller than b), a is placed before b.
+    If a - b is positive (i.e., a is larger than b), b is placed before a.
+    If a - b is zero, their order remains unchanged (they are considered equal).
+->
+TimeComplexity: O(log n)
+Space coplexity: O(n log n)
+
+*/

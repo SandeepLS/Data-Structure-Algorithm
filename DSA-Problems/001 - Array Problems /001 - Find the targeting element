@@ -1,0 +1,33 @@
+/*
+Array, find the targeting element in array:-
+rollNo: [1, 4, 6, 2, 5, 3, 8] Target=5
+*/
+
+const rollNo = [1, 4, 6, 2, 5, 3, 8];
+const target = 5;
+
+function findTargetElement(arr, target){
+    for(let i=0;i<arr.length;i++){
+        if(arr[i] == target){
+            return `We found at ${i}`;
+        }
+    }
+     return `Target not found..!`;
+}
+
+const result = findTargetElement(rollNo, target);
+console.log(result);
+
+/**
+Explanation of Approach:
+1.Linear Search:
+> This approach iterates through the array from the start to the end.
+> At each iteration, the current element is checked against the target.
+> If a match is found, the index is returned immediately.
+> If the loop completes without finding the target, -1 is returned.
+
+2.Why Linear Search?
+> The array isn't sorted, so linear search is straightforward and effective for small to medium-sized arrays.
+> Time complexity: O(n), where n is the length of the array.
+Space complexity: O(1), as no additional memory is used apart from the loop variable.
+*/

@@ -1,0 +1,12 @@
+Introduction to Algorithms & Sorting Algorithms - I:-
+
+-> Brief BluePrint.
+
+-> Array: 
+  is contigueos blocks of memory, where each block hold some data.
+  Array are index data-structure, each blocks have index.
+  ex: we want to store some list of data.
+  const array = ["san", "man", "kanrna"];
+
+Problem-001:- rollNo: [1, 4, 6, 2, 5, 3, 8] Target=5 :-Using Linear Search
+Problem-002:- rollNo: [1, 4, 6, 2, 5, 3, 8] Target=5 :-Using Binary Search

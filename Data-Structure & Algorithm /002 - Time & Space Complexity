@@ -4,5 +4,6 @@ Algorithms -> 1) Correctness | Accuracy -> Test cases
 -> Time & Space Complexity:-
 Relation between the Resources require & given code/Algo.
 It means: How much more resources we need, if i increas my input/parameters.
-(30:00s)
-learn Time & Space Complexity:-
+
+Time complexity:- measures the number of operations, the algorithm performs relative to the input size.
+Space complexity:- measures the memory, used by the algorithm, including input, output, and auxiliary variables.

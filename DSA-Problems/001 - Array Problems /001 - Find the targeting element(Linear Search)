@@ -31,3 +31,42 @@ Explanation of Approach:
 > Time complexity: O(n), where n is the length of the array.
 Space complexity: O(1), as no additional memory is used apart from the loop variable.
 */
+
+/*
+Time Complexity:-
+Time complexity measures the number of operations, the algorithm performs relative to the input size.
+
+Best Case:
+> The target is the first element of the array.
+> Only 1 comparison is made.
+> Time Complexity: O(1).
+
+Worst Case:
+> The target is the last element or not present in the array.
+> The loop iterates through all elements of the array.
+> Time Complexity: O(n), where n is the size of the array.
+
+Average Case:
+> The target is found roughly in the middle of the array, requiring about n/2 iterations.
+> Time Complexity: O(n).
+*/
+
+/*
+Space Complexity:-
+Space complexity measures the memory, used by the algorithm, including input, output, and auxiliary variables.
+
+The algorithm uses:
+> The input array arr (already given in memory).
+> The target variable (input).
+> The i variable for iteration (constant space).
+
+It does not create any additional data structures.
+
+Space Complexity: O(1) (constant space).
+*/
+Summary
+Time Complexity:
+    Best Case: O(1)
+    Worst Case: O(n)
+    Average Case: O(n)
+Space Complexity: O(1)

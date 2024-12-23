@@ -8,5 +8,22 @@ Introduction to Algorithms & Sorting Algorithms - I:-
   ex: we want to store some list of data.
   const array = ["san", "man", "kanrna"];
 
-Problem-001:- rollNo: [1, 4, 6, 2, 5, 3, 8] Target=5 :-Using Linear Search
-Problem-002:- rollNo: [1, 4, 6, 2, 5, 3, 8] Target=5 :-Using Binary Search
+  Problem-001:- rollNo: [1, 4, 6, 2, 5, 3, 8] Target=5 :-Using Linear Search
+  Problem-002:- rollNo: [1, 4, 6, 2, 5, 3, 8] Target=5 :-Using Binary Search
+
+Algorithms -> 1) Correctness | Accuracy -> Test cases
+              2) Efficiency | Scalability
+
+-> Time & Space Complexity:- 29:00s
+  Relation between the Resources require & given code/Algo.
+  It means: How much more resources we need, if i increas my input/parameters.
+  
+  Time complexity:- measures the number of operations, the algorithm performs relative to the input size. 
+                    We are going to execute statements, How many times.
+  Space complexity:- measures the memory, used by the algorithm, including input, output, and auxiliary variables.
+                     Then we do not using, extra space.
+
+-> Examples for Time complexity:- 45:00 to 1:26:00
+  How to write BigO Notation:-
+  > We only care about the largest polynomial.
+  > We can ignore constants, smaller values.

@@ -1,0 +1,112 @@
+1)push(): Adds one or more elements to the end of an array.
+  const arr = [1, 2, 3];
+  arr.push(4);
+  console.log(arr); // Output: [1, 2, 3, 4]
+
+2)pop(): Removes the last element from an array and returns it.
+  const arr = [1, 2, 3];
+  const removedElement = arr.pop();
+  console.log(arr); // Output: [1, 2]
+  console.log(removedElement); // Output: 3
+
+3)shift(): Removes the first element from an array and returns it.
+  const arr = [1, 2, 3];
+  const removedElement = arr.shift();
+  console.log(arr); // Output: [2, 3]
+  console.log(removedElement); // Output: 1
+
+4)unshift(): Adds one or more elements to the beginning of an array.
+  const arr = [2, 3];
+  arr.unshift(1);
+  console.log(arr); // Output: [1, 2, 3]
+
+5)slice():
+  is used to extract a portion of an array, and returns it as a new array, without modifying the original array.
+  creates a shallow copy of the selected portion.
+  The slice() method returns selected elements in an array, as a new array.
+  Ex:
+  const arr = [1, 2, 3, 4, 5];
+  const sliced = arr.slice(1, 4);
+  console.log(sliced); // Output: [2, 3, 4]
+  
+  Summary:
+  startIndex (1): This is the starting position (inclusive). Elements will be included starting from this index.
+  endIndex (4): This is the ending position (exclusive). Elements up to (but not including) this index will be included.
+  
+  Starts at index 1 (value 2) and includes it.
+  Includes the next elements until it reaches index 4 (value 5), but it does not include index
+
+6)splice()
+  Adds, removes, or replaces elements in an array.
+  Ex: 1
+  const arr = [1, 2, 3, 4];
+  arr.splice(1, 2, 'a', 'b'); // Removes 2 elements starting at index 1 and adds 'a' and 'b'
+  console.log(arr); // Output: [1, 'a', 'b', 4]
+
+  Ex: 2
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  // At position 2, add "Lemon" and "Kiwi":
+  fruits.splice(2,0, "Lemon","kiwi")
+  console.log(fruits)      //[ 'Banana', 'Orange', 'Lemon', 'kiwi', 'Apple', 'Mango' ]
+
+7)map():-
+  Create a new arry, from calling a function to each element.
+  Map() does not execute the function, for empty element.
+  Map() does not modified the original arry.
+  
+  Ex:-
+  const number = [4,9,16,25];
+  const newArr = number.map(Math.sqrt);
+  console.log(newArr) //OP:-[ 2, 3, 4, 5 ]
+  
+  Ex:-
+  const number = [4,9,16,25];
+  const newArr = number.map(myFunction);
+  function myFunction(num){
+      return num * 10;
+  }
+  console.log(newArr) //O/P:-[ 40, 90, 160, 250 ]
+
+  Imagine you have a list of numbers, and you want to transform each number in some way
+  (e.g., square it, double it, or add 10).
+  Ex:-
+  const arr = [1, 2, 3];  // Original array
+  const squared = arr.map(x => x * x);  //Take each element x and return its square (x * x).
+  console.log(squared);   // Output: [1, 4, 9]
+
+8)filter()
+  Creates a new array, with all elements that pass a test.
+  The filter() method creates a new array, by selecting only the elements of the original array,-
+  that satisfy a specific test condition, provided by a callback function.
+  
+  Ex:-
+  const arr = [1, 2, 3, 4, 5];
+  const even = arr.filter(x => x % 2 === 0);
+  console.log(even); // Output: [2, 4]
+  
+  Summary:
+  1. Original Array:
+     arr is [1, 2, 3, 4, 5]. This is the input array.
+  
+  2. Callback Function:
+     x => x % 2 === 0 is the test condition (callback function).
+      > x is each element in the array.
+      > x % 2 === 0 checks if the number x is even (divisible by 2 without a remainder).
+  3. How filter() Works:
+    > The filter() method loops through each element in the arr array and applies the callback function,-
+      to check if the condition is true.
+    > If the condition is true, the element is kept in the new array.
+    > If the condition is false, the element is ignored.
+    
+  teration Steps:
+  1 % 2 === 0 → false (1 is odd) → Not added to even.
+  2 % 2 === 0 → true (2 is even) → Added to even.
+  3 % 2 === 0 → false (3 is odd) → Not added to even.
+  4 % 2 === 0 → true (4 is even) → Added to even.
+  5 % 2 === 0 → false (5 is odd) → Not added to even.
+  
+  Why Use filter()?
+  > It’s a concise way to extract specific elements from an array based on a condition.
+  > No need for manual looping or creating a new array manually.
+
+9)reduce()

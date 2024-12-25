@@ -109,4 +109,71 @@
   > It’s a concise way to extract specific elements from an array based on a condition.
   > No need for manual looping or creating a new array manually.
 
-9)reduce()
+9)reduce():-
+  The reduce() method is used to reduce an array to a single value, by iterating over its elements,-
+  and applying a callback function to accumulate a result.
+
+  syntax: array.reduce(callbackFunction, initialValue)
+  a) callbackFunction: A function that runs for every element in the array. It has these parameters:
+     > acc (accumulator): The value being accumulated over each iteration.
+     > curr (currentValue): The current element being processed in the array.
+  b) initialValue: The initial value for the accumulator (optional but usually provided).
+
+  Example:-
+  const arr = [1, 2, 3, 4];
+  const sum = arr.reduce((acc, curr) => acc + curr, 0);
+  console.log(sum); // Output: 10  //T: O(n) //S: O(1)
+  
+  Step-by-Step Execution
+  a) Initial Setup:
+     The reduce() starts with an initial value of 0 (the initialValue argument).
+  
+  b) Iteration 1:
+     > acc = 0 (initial value)
+     > curr = 1 (first element of the array)
+     > Calculation: acc + curr = 0 + 1 = 1
+     > New acc = 1
+  
+  c) Iteration 2:
+     > acc = 1 (result from the previous step)
+     > curr = 2 (second element of the array)
+     > Calculation: acc + curr = 1 + 2 = 3
+     > New acc = 3
+  
+  d) Iteration 3:
+     > acc = 3 (result from the previous step)
+     > curr = 3 (third element of the array)
+     > Calculation: acc + curr = 3 + 3 = 6
+     > New acc = 6
+  
+  e) Iteration 4:
+     > acc = 6 (result from the previous step)
+     > curr = 4 (fourth element of the array)
+     > Calculation: acc + curr = 6 + 4 = 10
+     > New acc = 10
+  Final acc = 10 (result of the reduce() method).
+
+10) forEach():-
+    The forEach() method is used to execute a provided function, once for each element in an array.-
+    It is primarily used for, iterating through an array and performing some action on each element.
+
+   -> How it works:
+      * You provide a callback function to forEach() which gets executed for every element in the array.
+      * The callback receives three arguments:
+        > The current element (x in the example).
+        > The current index of the element.
+        > The array itself (optional).
+
+    Example:
+      const arr = [1, 2, 3];
+      arr.forEach((element, index, array) => {
+          console.log(`Element: ${element}, Index: ${index}`);
+      });  //T: O(n) //S: O(1)
+  
+      O/P:-
+      Element: 1, Index: 0
+      Element: 2, Index: 1
+      Element: 3, Index: 2
+    
+    When to Use forEach():-
+    Use it when you want to perform an operation on each array element (like printing, modifying, or calculating something).

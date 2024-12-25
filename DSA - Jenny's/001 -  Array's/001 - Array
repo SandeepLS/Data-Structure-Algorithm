@@ -1,8 +1,12 @@
 Array:-
-An array is a data structure, that can hold collection of values.
 Arrays can contains a mix of different data types. you can store string, boolean, numbers or even objecta all in the same array.
 Array are resizable, you don't have to declare the size of an array before creating it.
 Arrays are iterables, They can be used with a for of loop.
+
+  Array is contigueos blocks of memory, where each block hold some data.
+  Array are index data-structure, each blocks have index.
+  ex: we want to store some list of data.
+  const array = ["san", "man", "kanrna"];
 
 Array is a collection of items.
 Ex:-let marks = [34, 23, 23, 78, 98];

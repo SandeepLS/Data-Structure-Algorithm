@@ -1,0 +1,71 @@
+  What is need of array?
+Ans: Efficient Storage, Indexed Access, Fixed Size, Data Manipulation.
+
+What is Array?
+Ans: An array is a collection of elements of the same data type stored in contiguous memory locations.
+
+Types of Array?
+Ans: 
+  a. Based on Dimensions:
+    1D Array:
+      A single row or list of elements (e.g., [1, 2, 3, 4]).
+    2D Array:
+      Represented as a table or grid (e.g., [[1, 2], [3, 4]]).
+    Multi-Dimensional Array:
+      Arrays with more than two dimensions (e.g., int arr[2][3][4]).
+  b. Based on Initialization:
+    Static Array:
+      Declared with a fixed size during compile time.
+    Dynamic Array:
+      Size can be changed during runtime (e.g., ArrayList in Java, std::vector in C++).
+      
+How arrays can be decleared & initialized?
+Ans: 
+    Decleration:-
+    a) Using Array Literal Syntax (Recommended)
+      This is the most common and preferred way to declare and initialize an array.
+      let arr = []; // Declares an empty array
+      let arr = [1, 2, 3, 4, 5];  // Array with initial values
+    
+    b) Using the new Array() Constructor
+      You can also create an array using the new Array() constructor. This is less commonly used because the array literal syntax is simpler and more readable.
+      Declaring an array with a fixed size: 
+      let arr = new Array(5);  // Creates an array with 5 empty slots (undefined)
+      i)Declaring an array with specific values:
+        let arr = new Array(1, 2, 3, 4, 5);  // Creates an array with values 1, 2, 3, 4, 5
+        
+    Initialization:-
+    a) Static Initialization:- Initialize at the time of declaration.
+       Ex: let arr = [1, 2, 3, 4, 5]; // JavaScript
+      
+    b) Dynamic Initialization:- Assign values at runtime.
+       Ex: let arr = [];  // Declare an empty array
+          for (let i = 0; i < 5; i++) {
+          arr[i] = i * 2;  // Assign values to the array
+          }
+          console.log(arr);  // Output the array
+
+How data is represented in memory?
+Ans:- Contiguous Memory: Arrays store elements in contiguous blocks of memory. For example:
+int arr[4] = {10, 20, 30, 40};   //Memory layout (assuming int takes 4 bytes):
+Address  Value
+1000     10
+1004     20
+1008     30
+1012     40
+-----------------------------------------------------------------------------------------
+Fundamental DataTypes:- int, float, char, double 
+
+Memory: is a long tape of bytes. 1 bytes = 8 bits.
+In array, one block will take 4 bytes. Which means-
+let arr = [6,2,4,3,0]; So each block has 4Bytes & Each byte has 8bits.
+
+Address will be stored as HexaDecimal:- ex-> 100 to 103 => 1st block, 104 to 107 => 2nd block, 108 to 111 => 3rd block, etc...
+index:- a[0]=6, a[1]=2, a[2]=4, a[3]=3, a[4]=0
+
+How to calculate address:- Base address is 100
+find index: i=2, 4 is arrIndex
+=100 + 2 * 4
+=100+8 = 108
+
+At one time we can store 1 value.

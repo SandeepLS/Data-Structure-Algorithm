@@ -1,0 +1,151 @@
+6)splice()
+  Adds, removes, or replaces elements in an array.
+  Ex: 1
+  const arr = [1, 2, 3, 4];
+  arr.splice(1, 2, 'a', 'b'); // Removes 2 elements starting at index 1 and adds 'a' and 'b'
+  console.log(arr); // Output: [1, 'a', 'b', 4]
+
+  Ex: 2
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  // At position 2, add "Lemon" and "Kiwi":
+  fruits.splice(2,0, "Lemon","kiwi")
+  console.log(fruits)      //[ 'Banana', 'Orange', 'Lemon', 'kiwi', 'Apple', 'Mango' ]
+
+7)map():-
+  Create a new arry, from calling a function to each element.
+  Map() does not execute the function, for empty element.
+  Map() does not modified the original arry.
+  
+  Ex:-
+  const number = [4,9,16,25];
+  const newArr = number.map(Math.sqrt);
+  console.log(newArr) //OP:-[ 2, 3, 4, 5 ]
+  
+  Ex:-
+  const number = [4,9,16,25];
+  const newArr = number.map(myFunction);
+  function myFunction(num){
+      return num * 10;
+  }
+  console.log(newArr) //O/P:-[ 40, 90, 160, 250 ]
+
+  Imagine you have a list of numbers, and you want to transform each number in some way
+  (e.g., square it, double it, or add 10).
+  Ex:-
+  const arr = [1, 2, 3];  // Original array
+  const squared = arr.map(x => x * x);  //Take each element x and return its square (x * x).
+  console.log(squared);   // Output: [1, 4, 9]
+
+8)filter()
+  Creates a new array, with all elements that pass a test.
+  The filter() method creates a new array, by selecting only the elements of the original array,-
+  that satisfy a specific test condition, provided by a callback function.
+  
+  Ex:-
+  const arr = [1, 2, 3, 4, 5];
+  const even = arr.filter(x => x % 2 === 0);
+  console.log(even); // Output: [2, 4]
+  
+  Summary:
+  1. Original Array:
+     arr is [1, 2, 3, 4, 5]. This is the input array.
+  
+  2. Callback Function:
+     x => x % 2 === 0 is the test condition (callback function).
+      > x is each element in the array.
+      > x % 2 === 0 checks if the number x is even (divisible by 2 without a remainder).
+  3. How filter() Works:
+    > The filter() method loops through each element in the arr array and applies the callback function,-
+      to check if the condition is true.
+    > If the condition is true, the element is kept in the new array.
+    > If the condition is false, the element is ignored.
+    
+  teration Steps:
+  1 % 2 === 0 → false (1 is odd) → Not added to even.
+  2 % 2 === 0 → true (2 is even) → Added to even.
+  3 % 2 === 0 → false (3 is odd) → Not added to even.
+  4 % 2 === 0 → true (4 is even) → Added to even.
+  5 % 2 === 0 → false (5 is odd) → Not added to even.
+  
+  Why Use filter()?
+  > It’s a concise way to extract specific elements from an array based on a condition.
+  > No need for manual looping or creating a new array manually.
+
+9)reduce():-
+  The reduce() method is used to reduce an array to a single value, by iterating over its elements,-
+  and applying a callback function to accumulate a result.
+
+  syntax: array.reduce(callbackFunction, initialValue)
+  a) callbackFunction: A function that runs for every element in the array. It has these parameters:
+     > acc (accumulator): The value being accumulated over each iteration.
+     > curr (currentValue): The current element being processed in the array.
+  b) initialValue: The initial value for the accumulator (optional but usually provided).
+
+  Example:-
+  const arr = [1, 2, 3, 4];
+  const sum = arr.reduce((acc, curr) => acc + curr, 0);
+  console.log(sum); // Output: 10  //T: O(n) //S: O(1)
+  
+  Step-by-Step Execution
+  a) Initial Setup:
+     The reduce() starts with an initial value of 0 (the initialValue argument).
+  
+  b) Iteration 1:
+     > acc = 0 (initial value)
+     > curr = 1 (first element of the array)
+     > Calculation: acc + curr = 0 + 1 = 1
+     > New acc = 1
+  
+  c) Iteration 2:
+     > acc = 1 (result from the previous step)
+     > curr = 2 (second element of the array)
+     > Calculation: acc + curr = 1 + 2 = 3
+     > New acc = 3
+  
+  d) Iteration 3:
+     > acc = 3 (result from the previous step)
+     > curr = 3 (third element of the array)
+     > Calculation: acc + curr = 3 + 3 = 6
+     > New acc = 6
+  
+  e) Iteration 4:
+     > acc = 6 (result from the previous step)
+     > curr = 4 (fourth element of the array)
+     > Calculation: acc + curr = 6 + 4 = 10
+     > New acc = 10
+  Final acc = 10 (result of the reduce() method).
+
+10) forEach():-
+    The forEach() method is used to execute a provided function, once for each element in an array.-
+    It is primarily used for, iterating through an array and performing some action on each element.
+
+   -> How it works:
+      * You provide a callback function to forEach() which gets executed for every element in the array.
+      * The callback receives three arguments:
+        > The current element (x in the example).
+        > The current index of the element.
+        > The array itself (optional).
+
+    Example:
+      const arr = [1, 2, 3];
+      arr.forEach((element, index, array) => {
+          console.log(`Element: ${element}, Index: ${index}`);
+      });  //T: O(n) //S: O(1)
+  
+      O/P:-
+      Element: 1, Index: 0
+      Element: 2, Index: 1
+      Element: 3, Index: 2
+    
+    When to Use forEach():-
+    Use it when you want to perform an operation on each array element (like printing, modifying, or calculating something).
+
+    Time and Space Complexity of forEach():-
+    1. Time Complexity:
+       > The forEach() method iterates through all elements of the array exactly once.
+       > Time Complexity: O(n), where n is the number of elements in the array.
+    
+    2. Space Complexity:
+       > forEach() does not create a new array or require additional memory for operations.
+       > The callback function may use memory, depending on what you do inside it.
+       > Space Complexity: O(1) for the iteration itself, assuming no additional data structures are created.

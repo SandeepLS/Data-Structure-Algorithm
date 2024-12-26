@@ -1,0 +1,106 @@
+11) find():-
+    It Returns the first element, that satisfies a provided condition.
+    Once it finds such an element, it immediately returns it and stops searching further.
+    Example:-
+    const arr = [1, 2, 3, 4];
+    const found = arr.find(x => x > 2);
+    console.log(found); // Output: 3
+    
+    Example:-
+    const result = arr.find(x => x > 5); // No element > 5
+    console.log(result); // Output: undefined
+    
+    Time and Space Complexity
+    Time Complexity: Best Case: O(1) if the first element satisfies the condition.
+                     Worst Case: O(n), where n is the length of the array,
+                     (if the condition is checked for all elements or no match is found).
+    Space Complexity: O(1) as it does not use extra space; it only iterates through the array.
+
+12) findIndex():-
+    It Returns the index of the first element, that satisfies a provided condition.
+    Example:-
+    const arr = [1, 2, 3, 4];
+    const index = arr.findIndex(x => x > 2);
+    console.log(index); // Output: 2
+    
+    Example:- No match found:
+    const arr = [1, 2, 3, 4];
+    const index = arr.findIndex(x => x > 10); // No element > 10
+    console.log(index); // Output: -1
+    
+    Time and Space Complexity:
+    Time Complexity:
+      > Best case: O(1) → The condition is satisfied by the first element.
+      > Worst case:  O(n) → The condition is checked for all elements if no match is found or the match is at the last index.
+      > Where n is the number of elements in the array.
+    
+    Space Complexity:
+      > Space: O(1) → It uses constant extra space, as no additional structures are created.
+
+13) includes():-
+    It Checks if an array contains a specified value.
+    Example:-
+    const arr = [1, 2, 3];
+    console.log(arr.includes(2)); // Output: true
+    console.log(arr.includes(4)); // Output: false
+    
+    What it Does:
+      > It scans the array from start to finish.
+      > It looks for the specified value.
+      > If the value exists in the array, it returns true.
+      > If the value does not exist, it returns false.
+    
+    Time Complexity:
+    Worst Case: O(n), The method may have to check each element in the array before concluding that the value is not present.
+    Space Complexity: O(1), No extra space is used since the operation is done in-place on the array.
+
+
+14) concat()
+    It Merges two or more arrays.
+    Example:-
+    const arr1 = [1, 2];
+    const arr2 = [3, 4];
+    const merged = arr1.concat(arr2);
+    console.log(merged); // Output: [1, 2, 3, 4]
+    
+    arr1.concat(arr2):
+    > Creates a new array.
+    > Copies all elements from arr1 into this new array.
+    > Appends all elements from arr2 to the new array.
+    
+    Time Complexity:
+      The time complexity of concat() is O(n + m), where:
+        > n is the size of the first array (arr1 in this case).
+        > m is the size of the second array (arr2 in this case).
+      Why? Because concat() iterates over each element of both arrays to copy them into the new array.
+    
+    Space Complexity:
+    The space complexity of concat() is O(n + m), where:
+      > n is the size of the first array.
+      > m is the size of the second array.
+
+15) sort():-
+    The sort() method sorts the elements of an array in place.
+    By default, it converts array elements to strings and sorts them alphabetically(lexicographically).-
+    For numbers, you must provide a compare function to sort them numerically.
+    
+    Example:-
+    const arr = [3, 1, 4, 2];
+    arr.sort((a, b) => a - b); // Ascending order
+    console.log(arr); // Output: [1, 2, 3, 4]
+    
+    Example:-
+    const arr = [3, 1, 4, 2];
+    arr.sort(); 
+    console.log(arr); // Output: [1, 2, 3, 4]
+    
+    The default sorting converts the numbers to strings and compares them lexicographically:
+    '10' would come before '2' because it starts with 1.
+    To handle numbers correctly, you must use (a, b) => a - b.
+    
+    Time Complexity of sort()
+    Average Case: O(n log n)
+        Most modern JavaScript engines use an efficient algorithm like Timsort (a combination of merge sort and insertion sort) for sorting.
+        n is the number of elements in the array.
+    Worst Case: O(n log n)
+    Best Case: O(n) (for nearly sorted arrays).

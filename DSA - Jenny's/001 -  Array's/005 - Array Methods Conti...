@@ -91,7 +91,7 @@
     
     Example:-
     const arr = [3, 1, 4, 2];
-    arr.sort(); 
+    arr.sort();     // '10' would come before '2' because it starts with 1.
     console.log(arr); // Output: [1, 2, 3, 4]
     
     The default sorting converts the numbers to strings and compares them lexicographically:

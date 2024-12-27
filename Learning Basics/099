@@ -1,0 +1,4 @@
+We tell JavaScript to create or declare a variable by putting the keyword var in front of it, like so:
+*/
+Ex:-
+var ourName;

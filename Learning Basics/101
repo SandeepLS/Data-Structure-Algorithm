@@ -1,0 +1,7 @@
+-- Database
+> create database BookMyShow;
+> show databases;
+> show tables;
+
+-- Database changed
+> USE BookMyShow;

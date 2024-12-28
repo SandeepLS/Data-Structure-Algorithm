@@ -1,0 +1,8 @@
+-- Create Tables
+
+-- Theatre Table
+CREATE TABLE THEATRE (
+    TheatreID INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(45) NOT NULL,
+    Location VARCHAR(125) NOT NULL
+    );

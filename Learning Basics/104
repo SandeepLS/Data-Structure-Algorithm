@@ -1,0 +1,7 @@
+-- Customer can view the Movies list as per the dates.
+ SELECT MS.ShowID, MS.ShowDate, MS.ShowTime, MS.Format, MS.Language, M.Title AS MovieTitle, T.Name AS TheatreName, S.ScreenNumber
+    FROM MovieShow MS
+    JOIN Screen S ON MS.ScreenID = S.ScreenID
+    JOIN Theatre T ON S.TheatreID = T.TheatreID
+    JOIN Movie M ON MS.MovieID = M.MovieID
+    WHERE T.Name = 'PVR Nexus' AND MS.ShowDate = '2025-01-25';

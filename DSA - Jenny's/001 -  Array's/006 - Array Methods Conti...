@@ -45,3 +45,43 @@
     console.log(joinedWithSpace);    // Output: "10 20 30"
     console.log(joinedWithoutSeparator); // Output: "102030"
     
+18) indexOf()
+    It Returns the first index, of a specified value.
+    const arr = [1, 2, 3, 2];
+    console.log(arr.indexOf(1)); //: 0
+    console.log(arr.indexOf(2)); //: 1(firstIndex)
+    console.log(arr.indexOf(3)); //: 2
+    console.log(arr.indexOf(2)); //: 1(firstIndex)
+    console.log(arr.indexOf(4)); // Output: -1(If the value is not present)
+    
+    Time Complexity:
+    Worst-case: O(n), where n is the length of the array.
+    > This is because indexOf() iterates through the array from the start until it finds the element or reaches the end.
+    > For example, if the element is not present, it will check all n elements.
+    
+    Space Complexity:
+    Space: O(1).
+    indexOf() does not use any extra memory; it only operates on the input array.
+    
+
+19) lastIndexOf()
+    Returns the last index, of a specified value.
+    const arr = [1, 2, 3, 2];
+    console.log(arr.lastIndexOf(1)); //: 0
+    console.log(arr.lastIndexOf(2)); //: 3(lastIndex)
+    console.log(arr.lastIndexOf(3)); //: 2
+    console.log(arr.lastIndexOf(2)); //: 3(lastIndex)
+    
+    Time Complexity:
+    Worst-case: O(n), where n is the length of the array.
+    > The method may need to traverse the entire array if the specified value is at the beginning or does not exist.
+    
+    Space Complexity:
+    Space: O(1)
+    > No extra memory is allocated as it only traverses the array in-place without creating new structures.
+
+20) flat()
+    Flattens nested arrays.
+    const arr = [1, [2, [3, 4]], 5];
+    const flatArr = arr.flat(2);
+    console.log(flatArr); // Output: [1, 2, 3, 4, 5]

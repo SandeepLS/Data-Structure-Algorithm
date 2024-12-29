@@ -10,9 +10,9 @@ function binarySearch(arr, target){
     while (left <= right) {
         const mid = Math.floor((left + right) / 2);
 
-        if (arr[mid] === target) {
+        if (target === arr[mid]) {
             return mid; // Return the index if the target is found
-        } else if (arr[mid] < target) {
+        } else if (target > arr[mid]) {
             left = mid + 1; // Move to the right half
         } else {
             right = mid - 1; // Move to the left half
@@ -26,8 +26,8 @@ const sortedRollNo = roll.slice().sort((a, b) => a-b);  //Sorted array
 
 const result = binarySearch(sortedRollNo, target);
 
-console.log("Sorted array:", sortedRollNo);
-console.log("Index array:",result);
+console.log("Sorted array:", sortedRollNo);  //Sorted array: [1, 2, 3, 4, 5, 6, 8]
+console.log("Index array:",result);    //Index array: 4
 
 --------------------------------------------------------------------------------------------------
 /**

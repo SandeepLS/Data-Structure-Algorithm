@@ -1,0 +1,47 @@
+16) reverse():- Reverses the elements in an array.
+    The reverse() method reverses the order of elements in the array in place, 
+    meaning it modifies the original array rather than creating a new one.
+    const arr = [1, 2, 3];
+    arr.reverse();
+    console.log(arr); // Output: [3, 2, 1]
+    
+    Time Complexity: O(n)
+    The method swaps elements from the beginning and the end of the array, moving toward the middle.
+    
+    Space Complexity: O(1)
+    Since the reversal happens in place (i.e., no new array is created), the space usage is constant, regardless of the array size.
+
+17) join()
+    Joins all elements into a string with a specified separator.
+    const arr = [1, 2, 3];
+    const joined = arr.join("-");
+    console.log(joined); // Output: "1-2-3"
+    
+    Explaination:
+    > The join() method takes a separator, in this case, the hyphen "-".
+    > It converts each element in the array into a string if it isn’t already a string.
+    [1, 2, 3] becomes ["1", "2", "3"].
+    > Then, it combines these strings into one single string, placing the separator "-" between each element.
+    Result: "1-2-3"
+    
+    Time Complexity:
+    The join() method has to traverse the entire array once to convert each element to a string and concatenate them.
+    The time complexity is O(n * m), where:
+    n: Number of elements in the array.
+    m: Average length of string conversion or the separator.
+    
+    Space Complexity:
+    > A new string is created that contains all the elements of the array, plus the separators.
+    > The space complexity is O(k), where: 𝑘
+    k: Total length of the resulting string, which includes all element lengths and the separators.
+
+    Example: 
+    const arr = [10, 20, 30];
+    const joinedWithComma = arr.join(",");   // "10,20,30" (default separator is a comma)
+    const joinedWithSpace = arr.join(" ");  // "10 20 30"
+    const joinedWithoutSeparator = arr.join(""); // "102030"
+    
+    console.log(joinedWithComma);    // Output: "10,20,30"
+    console.log(joinedWithSpace);    // Output: "10 20 30"
+    console.log(joinedWithoutSeparator); // Output: "102030"
+    

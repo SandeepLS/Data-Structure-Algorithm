@@ -1,0 +1,74 @@
+-> Data Types:- Primitive & NonPrimitive. [:Javascript, IMP Ques JS, 035]
+
+->DS is a Linear and Non_Linear.
+
+-> Structure:- is a step by step procedure.
+
+-> Must know: Variables, Function & loops. [:Javascript, IMP Ques JS, 037]
+
+-> Array:
+  is contigueos blocks of memory, where each block hold some data.
+  Array are index data-structure, each blocks have index.
+  ex: we want to store some list of data.
+  const array = ["san", "man", "kanrna"];
+
+  Array's can be homogeneous & non-homogeneus
+  homogeneous: each blocks have same data type.
+  non-homogeneus: each blocks have different(Number, sreing, boolean) data type.
+
+  Examples:-
+  //CRUD
+  //Create
+  const arr = ["Sandeep", "Nicky", "Bhaskar", "theja"];
+  
+  //Read
+  console.log(arr);
+  
+  //forLoop Read
+  for(let i=0; i<arr.length;i++){
+      console.log(arr[i], "@", i)
+  }
+  
+  //Update
+  arr[2] = "Motte";
+  console.log(arr);
+  
+  //Delete
+  arr.pop();
+  console.log(arr);
+  -------------------------------------------------------------------
+  These 4 topics must be in aevery algo: CASE
+  Correctness, Adptability, Scalable, Efficient.
+  -------------------------------------------------------------------
+  Example:-
+  const officeNames = ["Sandeep", "Nicky", "Bhaskar", "theja"];
+  
+  function doesPersonExist(name, officeNames) {
+      return officeNames.includes(name); // Checks if the name exists in the array
+  }
+  
+  // Test cases
+  console.log(doesPersonExist("Sandeep", officeNames)); // true
+  console.log(doesPersonExist("Rohan", officeNames));   // false
+  
+  Array.includes() Method:
+  This method checks whether a given element exists in the array.
+  It returns true if the element is found; otherwise, it returns false.
+  ------------------------------------------------------------------------
+  const officeName = ["Sandeep", "Nicky", "Bhaskar", "theja"];
+  const target = "Sandeep"; // Target should be a string, not an array
+  
+  function findTargetElement(arr, target) {
+      for (let i = 0; i < arr.length; i++) { // Fix the typo 'lrngth' to 'length'
+          if (arr[i] === target) { // Compare string directly with the target
+              return `We found at index ${i}`;
+          }
+      }
+      return `Target Not found...`;
+  }
+  
+  const result = findTargetElement(officeName, target);
+  console.log(result);  //We found at index 0
+
+-----------------------------------------------------------------------------
+44:30ss

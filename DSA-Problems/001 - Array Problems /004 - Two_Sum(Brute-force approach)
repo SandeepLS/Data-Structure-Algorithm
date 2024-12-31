@@ -1,0 +1,39 @@
+const arr = [2, 7, 11, 15];
+const target = 9;
+
+function twoSum(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) { // Fixed inner loop
+      if (arr[i] + arr[j] === target) {
+        return [i, j];
+      }
+    }
+  }
+  return false;
+}
+
+console.log(twoSum(arr, target)); // Output: [0, 1]
+
+----------------------------------------------------------------------
+Function Logic
+> Outer Loop: Iterates through the array (i loop).
+> Inner Loop: Starts from the current index i and iterates through the rest of the array (j loop).
+> Check: For each pair of indices (i, j), checks if the sum of the two elements equals the target.
+> Return: Returns the indices [i, j] as soon as a matching pair is found.
+> Default: Returns false if no pair is found.
+
+Time Complexity
+> The outer loop runs n times, where 𝑛 is the length of the array.
+> For each iteration of the outer loop, the inner loop runs approximately n−i times.
+> The total number of iterations for the inner loop across all outer loop iterations is approximately:
+> The comparison arr[i] + arr[j] == target is a constant-time operation.
+  Thus, the time complexity is: O(N2)
+
+Space Complexity
+> The function uses a fixed amount of extra space regardless of input size:
+  A constant number of variables (i, j, and the return array [i, j] if successful).
+> No additional data structures are used.
+  Thus, the space complexity is: O(1)
+
+This solution works, but it could be optimized using a hash map (or object) to achieve a better time complexity of O(n). 
+Would you like to see an optimized solution?

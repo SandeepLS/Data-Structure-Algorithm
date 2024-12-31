@@ -36,12 +36,35 @@ When i = 3, nums[3] = 4, and complement = 7 - 4 = 3. 3 is in the map (at index 2
 When i = 2, nums[2] = 3, and complement = 7 - 3 = 4. At this point,
 we haven't checked for the complement yet, and 4 is not yet in the map, 
 so we proceed by adding 3 to the map. The corrected map after this step would be:
-
 {
   1: 0,
   2: 1,
   3: 2
 }
+
+Example Walkthrough:
+1. i = 0, value = 1
+   complement_pair = 7 - 1 = 6
+    > 6 is not in the map.
+    > Add {1: 0} to the map.
+    > Current map: {1: 0}
+
+2. i = 1, value = 2
+   complement_pair = 7 - 2 = 5
+    > 5 is not in the map.
+    > Add {2: 1} to the map.
+    > Current map: {1: 0, 2: 1}
+
+3. i = 2, value = 3
+   complement_pair = 7 - 3 = 4
+    > 4 is not in the map.
+    > Add {3: 2} to the map.
+    > Current map: {1: 0, 2: 1, 3: 2}
+
+4. i = 3, value = 4
+   complement_pair = 7 - 4 = 3
+    > 3 is in the map (at index 2).
+    > Return [2, 3].
 */
 
 ----------------------------------------------------------------------------------------------

@@ -1,0 +1,4 @@
+Subset:
+A subset is any combination of elements from the array.
+It can be contiguous or non-contiguous.
+The order of elements in the original array does not matter.

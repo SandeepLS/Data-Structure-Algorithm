@@ -1,0 +1,53 @@
+Subarray:
+> A subarray is a contiguous part of the array.
+> It must maintain the sequence of elements, from the original array.
+
+Example:
+For the array [1, 2, 3], the possible subarrays are:
+// Output: [ [1], [1, 2], [1, 2, 3], [2], [2, 3], [3] ]
+
+Example:-
+function generateSubarrays(arr) {
+    const subarrays = [];
+    for (let start = 0; start < arr.length; start++) {
+        let subarray = [];
+        for (let end = start; end < arr.length; end++) {
+            subarray.push(arr[end]);
+            subarrays.push([...subarray]);
+        }
+    }
+    return subarrays;
+}
+
+const arr = [1, 2, 3];
+console.log(generateSubarrays(arr));
+// Output: [ [1], [1, 2], [1, 2, 3], [2], [2, 3], [3] ]
+
+Workflow:-
+1. First Outer Loop (start = 0):
+   subarray starts empty: []
+   Inner Loop:
+    > end = 0: Add arr[0] → subarray = [1], push [1] to subarrays.
+    > end = 1: Add arr[1] → subarray = [1, 2], push [1, 2] to subarrays.
+    > end = 2: Add arr[2] → subarray = [1, 2, 3], push [1, 2, 3] to subarrays.
+   Subarrays after first outer loop: [[1], [1, 2], [1, 2, 3]]
+
+2. Second Outer Loop (start = 1):
+   Reset subarray to empty: []
+   Inner Loop:
+    > end = 1: Add arr[1] → subarray = [2], push [2] to subarrays.
+    > end = 2: Add arr[2] → subarray = [2, 3], push [2, 3] to subarrays.
+   Subarrays after second outer loop: [[1], [1, 2], [1, 2, 3], [2], [2, 3]]
+
+3. Third Outer Loop (start = 2):
+   Reset subarray to empty: []
+   Inner Loop:
+    > end = 2: Add arr[2] → subarray = [3], push [3] to subarrays.
+   Subarrays after third outer loop: [[1], [1, 2], [1, 2, 3], [2], [2, 3], [3]]
+  
+------------------------------------------------------------------------------
+Time Complexity:
+The dominant term is from the nested loops: O(n²).
+
+Space Complexity:
+The space required for storing subarrays dominates: O(n²)

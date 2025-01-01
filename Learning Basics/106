@@ -1,0 +1,5 @@
+Space Complexity
+> The function uses a fixed amount of extra space regardless of input size:
+  A constant number of variables (i, j, and the return array [i, j] if successful).
+> No additional data structures are used.
+  Thus, the space complexity is: O(1)

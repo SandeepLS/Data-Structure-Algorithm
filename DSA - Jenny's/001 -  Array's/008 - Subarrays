@@ -1,5 +1,5 @@
 Subarray:
-> A subarray is a contiguous part of the array.
+> A subarray is a contiguous part of the array. 
 > It must maintain the sequence of elements, from the original array.
 
 Example:

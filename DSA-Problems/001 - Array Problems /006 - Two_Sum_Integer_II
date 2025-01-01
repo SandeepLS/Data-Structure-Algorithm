@@ -1,0 +1,41 @@
+const arr = [1,2,3,4];
+const target = 7;
+
+function twoSumII(nums, target){
+    let l=0;
+    let r=nums.length-1;
+
+    while(l<=r){
+        let sum = nums[l] + nums[r];
+        if(sum == target){
+            return [l+1, r+1];
+        }
+        if(sum > target){
+            r--;
+        }else {
+            l++;
+        }
+    }
+}
+
+console.log(twoSumII(arr, target));
+-----------------------------------------------------------------------------
+
+/*
+Given an array of integers numbers that is sorted in non-decreasing order.
+
+Return the indices (1-indexed) of two numbers, [index1, index2],
+such that they add up to a given target number target and index1 < index2.
+Note that index1 and index2 cannot be equal, therefore you may not use the same element twice.
+
+There will always be exactly one valid solution.
+Your solution must use 
+O(1) additional space.
+
+Example 1:
+Input: numbers = [1,2,3,4], target = 3
+Output: [1,2]
+*/
+----------------------------------------------------------------------------
+Total Time Complexity: O(n)
+Space Complexity: O(1)

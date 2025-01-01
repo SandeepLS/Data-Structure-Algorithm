@@ -1,0 +1,11 @@
+function generateSubarrays(arr) {
+    const subarrays = [];
+    for (let start = 0; start < arr.length; start++) {
+        let subarray = [];
+        for (let end = start; end < arr.length; end++) {
+            subarray.push(arr[end]);
+            subarrays.push([...subarray]);
+        }
+    }
+    return subarrays;
+}

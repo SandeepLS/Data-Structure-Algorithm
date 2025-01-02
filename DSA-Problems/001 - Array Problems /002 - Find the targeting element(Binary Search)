@@ -40,12 +40,17 @@ console.log("Index array:",result);    //Index array: 4
     If a - b is positive (i.e., a is larger than b), b is placed before a.
     If a - b is zero, their order remains unchanged (they are considered equal).
 ->
-TimeComplexity: O(log n)
-Space coplexity: O(n log n)
------------------------------
-Time Complexity
-Best case: O(1), when the target is found at the first check.
-Average/Worst case: O(logn), since the search range halves after every iteration.
+TimeComplexity: O(n log n)
+    > Binary Search, In each iteration, the search space is divided into half.
+      Time complexity: O(logn).
+    > Overall Time Complexity:
+        Sorting dominates: O(n log n).
+
+Space Complexity: O(n)
+> Sorting: The sort method creates a copy using .slice() for a sorted array, consuming O(n).
+> Binary Search: Uses O(1) additional space.
+> Overall Space Complexity: O(n).
+-----------------------------------------------------------------------------
 */
 
 How It Works

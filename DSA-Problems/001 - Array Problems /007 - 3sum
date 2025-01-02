@@ -1,0 +1,48 @@
+Addition and Subtraction
+1. Same signs: 
++ + + = +: Adding two positive numbers results in a positive number.
+− + − = −: Adding two negative numbers results in a negative number.
+
+2. Different signs:
++ + − = + (or − + + = +): Subtract the smaller absolute value from the larger absolute value and keep the sign of the larger absolute value.
+
+Examples:
+5+(−3) = 2 (Positive is larger; result is positive)
+−7+2 = −5 (Negative is larger; result is negative)
+---------------------------------------------------------------------------------------
+https://www.youtube.com/watch?v=5KeHApBsxG4&list=PPSV
+Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+Notice that the solution set must not contain duplicate triplets.
+
+Ex:
+var threeSum = function (nums) {
+  nums.sort((a, b) => a - b); //First sort the array
+  const res = [];
+  for (let i = 0; i < nums.length; i++) {
+    if (i > 0 && nums[i] == nums[i - 1]) {  //Skipping duplicate
+      continue;
+    }
+    let l = i + 1;
+    let r = nums.length - 1;
+    while (l < r) {
+      const sum = nums[i] + nums[l] + nums[r];
+      if (sum > 0) {
+        r--;
+      }
+      if (sum < 0) {
+        l++;
+      }
+      if (sum === 0) {
+        res.push([nums[i], nums[l], nums[r]]);
+        l++;
+        while (nums[l] == nums[l - 1] && l < r) {
+          l++;
+        }
+      }
+    }
+  }
+  return res;
+};
+
+const res = threeSum([-1, 0, 1, 2, -1, -4]);
+console.log(res);        //[ [ -1, -1, 2 ], [ -1, 0, 1 ] ]

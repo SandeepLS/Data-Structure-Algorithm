@@ -1,0 +1,9 @@
+JavaScript uses the - symbol for subtraction.
+
+Example
+
+const myVar = 12 - 6;
+myVar would have the value 6.
+*/
+//Ex:-
+const difference = 45 - 33;

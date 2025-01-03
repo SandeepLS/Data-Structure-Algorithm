@@ -1,0 +1,71 @@
+function mergeAlternately(word1, word2) {
+    let i = 0, j = 0; // Create two Pointers for both strings
+    const result = []; // To store the merged characters
+
+    // Traverse both strings alternately
+    while (i < word1.length || j < word2.length) {
+        if (i < word1.length) {
+            result.push(word1[i]); // Add character from word1
+            i++;
+        }
+        if (j < word2.length) {
+            result.push(word2[j]); // Add character from word2
+            j++;
+        }
+    }
+
+    // Convert array to string and return
+    return result.join('');
+}
+
+// Example Usage
+console.log(mergeAlternately("abc", "pqr")); // Output: "apbqcr"
+console.log(mergeAlternately("ab", "pqrs")); // Output: "apbqrs"
+console.log(mergeAlternately("abcd", "pq")); // Output: "apbqcd"
+
+/*
+You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. 
+If a string is longer than the other, append the additional letters onto the end of the merged string.
+Return the merged string.?
+
+This problem primarily involves strings and the concept of merging them in a specific order.
+The data structure used is a list/array, where characters from the strings are merged into a result string (or list which is then converted to a string).
+
+Approach and Workflow
+1. Initialization:
+  > Use two pointers to iterate through word1 and word2 simultaneously.
+  > Initialize an empty array to hold the characters of the merged result.
+
+2. Iterate Through Both Strings:
+  > Traverse both strings using the pointers. For each iteration:
+    > Append the character from word1 (if the pointer is in range).
+    > Append the character from word2 (if the pointer is in range).
+
+3. Handle Unequal Lengths:
+  > After the traversal, append any remaining characters from the longer string to the merged array.
+
+4. Convert the Result to a String:
+  > Combine the array into a single string using .join('').
+
+5. Return the Result:
+  > Return the merged string.
+
+
+Time Complexity:- O(n + m)
+Definition: Time complexity measures how the runtime of an algorithm scales with the size of the input.
+In this problem:
+  > Let n = word1.length and m = word2.length.
+  > We iterate through both strings, processing each character exactly once.
+Key Steps:
+> Traversing word1: Takes O(n), as we iterate through each character in word1.
+> Traversing word2: Takes O(m), as we iterate through each character in word2.
+> Combining the results: Appending characters to the result array is an O(1) operation per character.
+-----------------------------------------------------------------------------------------------------
+Space Complexity:- O(n+m)
+Definition: Space complexity measures the amount of extra memory used by the algorithm, not including the input.
+In this problem:
+  > We use an array, result, to store the merged characters.
+    This array will store all characters from word1 and word2, so its size will be O(n+m).
+  > Temporary variables like i, j, and a constant amount of memory for pointers and counters are used, which take O(1) space.
+
+*/

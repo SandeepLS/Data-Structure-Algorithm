@@ -1,0 +1,75 @@
+//1. Approach 1: Using Built-in indexOf Method:-
+    var strStr = function(haystack, needle) {
+        return haystack.indexOf(needle); // Returns the index or -1 if not found
+    };
+    // Example Usage
+    console.log(strStr("sadbutsad", "sad")); // Output: 0
+    console.log(strStr("leetcode", "leeto")); // Output: -1
+
+//2. Approach 2: Manual Sliding Window Approach
+var strStr = function(haystack, needle) {
+    const needleLength = needle.length;
+    const haystackLength = haystack.length;
+
+    // Traverse the haystack with a sliding window
+    for (let i = 0; i <= haystackLength - needleLength; i++) {
+        // Check if substring matches needle
+        if (haystack.substring(i, i + needleLength) === needle) {
+            return i;
+        }
+    }
+    
+    // If no match is found
+    return -1;
+};
+
+// Example Usage
+console.log(strStr("sadbutsad", "sad")); // Output: 0
+console.log(strStr("leetcode", "leeto")); // Output: -1
+
+// 
+/*
+Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+
+Example 1:
+  Input: haystack = "sadbutsad", needle = "sad"
+  Output: 0  
+  Explanation: "sad" occurs at index 0 and 6.
+  The first occurrence is at index 0, so we return 0.
+
+Example 2:
+  Input: haystack = "leetcode", needle = "leeto"
+  Output: -1
+  Explanation: "leeto" did not occur in "leetcode", so we return -1.
+*/
+
+/*
+Solution:
+This problem deals with strings and searching for substrings within strings.
+While the underlying logic of substring search may use data structures like arrays -
+or hashmaps (in advanced algorithms), the direct focus here is on string operations.
+
+Approach 1: Using Built-in indexOf Method
+The simplest and most direct solution is to use JavaScript’s built-in string method indexOf, which returns:
+> The index of the first occurrence of the substring (needle) in the string (haystack), or
+> -1 if the substring is not found.
+
+  Examples:- // Using Built-in indexOf
+  var strStr = function(haystack, needle) {
+      return haystack.indexOf(needle); // Returns the index or -1 if not found
+  };
+  
+  // Example Usage
+  console.log(strStr("sadbutsad", "sad")); // Output: 0
+  console.log(strStr("leetcode", "leeto")); // Output: -1
+
+Approach 2: Manual Sliding Window Approach
+1. Define the Window:
+   Traverse the haystack string with a sliding window of size equal to the length of needle.
+2. Compare Substrings:
+   At each position in haystack, extract a substring of the same length as needle and compare it with needle.
+3. Return Index:
+   If a match is found, return the starting index of the substring.
+   If no match is found after traversal, return -1.
+
+*/

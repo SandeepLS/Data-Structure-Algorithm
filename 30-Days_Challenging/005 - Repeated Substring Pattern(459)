@@ -1,0 +1,101 @@
+Solution 1:-
+var repeatedSubstringPattern = function(s) {
+    const n = s.length;
+
+    // Iterate through possible substring lengths
+    for (let len = 1; len <= Math.floor(n / 2); len++) {
+        if (n % len === 0) { // Length of s must be divisible by substring length
+            const substring = s.slice(0, len);
+            const repeated = substring.repeat(n / len);
+            if (repeated === s) {
+                return true;
+            }
+        }
+    }
+
+    return false; // No valid substring found
+};
+
+// Example Usage
+console.log(repeatedSubstringPattern("abab"));        // Output: true
+console.log(repeatedSubstringPattern("aba"));         // Output: false
+console.log(repeatedSubstringPattern("abcabcabcabc")); // Output: true
+
+Solution 2:-
+var repeatedSubstringPattern = function(s) {
+    const doubled = s + s; // Duplicate the string
+    const trimmed = doubled.slice(1, -1); // Remove the first and last characters
+    return trimmed.includes(s); // Check if original string exists in the new string
+};
+
+// Example Usage
+console.log(repeatedSubstringPattern("abab"));        // Output: true
+console.log(repeatedSubstringPattern("aba"));         // Output: false
+console.log(repeatedSubstringPattern("abcabcabcabc")); // Output: true
+
+
+/**
+Repeated Substring Pattern:-
+Given a string s, check if it can be constructed by taking a substring of it and appending multiple copies of the substring together.
+
+Example 1:
+Input: s = "abab"
+Output: true
+Explanation: It is the substring "ab" twice.
+
+Example 2:
+Input: s = "aba"
+Output: false
+*/
+/**
+Solution 1: Brute Force
+> Iterate through potential substring lengths from 1 to s.length / 2.
+> Extract a substring of the current length and check:
+  If it repeats enough times to recreate the string s.
+> If a match is found, return true; otherwise, return false.
+
+Solution 2: String Manipulation Trick
+A clever trick involves duplicating the string and removing its first and last characters.
+If the original string exists as a substring in this new string, it must be made of repeated patterns.
+
+
+Example Walkthrough:- 
+  1. n=8 (string length):
+     n/2=4.
+     Math.floor(4) results in 4, so we check substring lengths 1,2,3,4.
+
+Summary:-
+n % len === 0: Ensures len is a divisor of n.
+s.slice(0, len): Extracts a potential repeating substring.
+substring.repeat(n / len): Repeats the substring to match the string length.
+repeated === s: Verifies if the repeated substring forms the original string.
+
+The line if (n % len === 0) ensures:
+  Only valid substring lengths are considered.
+  Avoids unnecessary computations for invalid lengths.
+  Improves efficiency by reducing the number of substring checks.
+*/
+
+/**
+Time Complexity:-
+  Brute Force:
+  Generating substrings: O(n).
+  Repeating substrings: O(n).
+  Total complexity: O(n2) in the worst case.
+
+  String Manipulation:
+  Doubling the string: O(n).
+  Removing characters: O(n).
+  Checking substring existence: O(n).
+  Total complexity: O(n).
+
+Space Complexity
+  Brute Force:
+  Space for repeated substrings: O(n).
+  Total: O(n).
+
+  String Manipulation:
+  Space for doubled string: O(n).
+  Total: O(n).
+
+*/

@@ -1,0 +1,16 @@
+The remainder operator % gives the remainder of the division of two numbers.
+
+Example:-
+5 % 2 = 1
+5 / 2 = 2 remainder 1
+2 * 2 = 4
+5 - 4 = 1
+
+Explain:-
+Let's go through your example, 5%2 = 1
+  (i)5%2: Divide 5 by 2: 5/2=2 (Quotient is 2).
+  (ii)Multiply the quotient by the divisor:2×2 = 4.
+  (iii)Subtract this product from the original number: 5−4 = 1.
+
+Ex: const remainder = 11 % 3;
+O/P:-The value of remainder should be 2

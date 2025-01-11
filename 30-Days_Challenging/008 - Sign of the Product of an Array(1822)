@@ -11,6 +11,7 @@ var arraySign = function (nums) {
   }
 
   // Determine the sign based on the count of negative numbers
+  // negativeCount devisible by 2, if we get remainder 0, it's print: 1, if not print: -1.
   return negativeCount % 2 === 0 ? 1 : -1;
 };
 

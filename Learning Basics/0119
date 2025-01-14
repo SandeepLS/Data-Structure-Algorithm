@@ -1,0 +1,5 @@
+We can also subtract one number from another.
+JavaScript uses the - symbol for subtraction. 
+
+Example
+const myVar = 12 - 6;

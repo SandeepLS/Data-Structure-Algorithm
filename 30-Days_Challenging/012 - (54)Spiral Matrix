@@ -78,4 +78,11 @@ while( top <= down && left <= right ){
   }
 }
 
+Time Complexity:- O(m×n)
+    > Each element is visited exactly once, so the time complexity is O(m×n), 
+    > where m is the number of rows and n is the number of columns.
+
+Space Complexity:- O(m×n)
+    > Output Array: O(m×n) to store the spiral order.
+    > Additional Variables: O(1) for boundaries and indices.
 **/

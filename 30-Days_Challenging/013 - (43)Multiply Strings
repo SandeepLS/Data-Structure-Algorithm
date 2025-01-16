@@ -1,0 +1,161 @@
+function spiralOrder(matrix) {
+    const result = []; // Array to store the spiral order traversal
+    if (matrix.length === 0) return result;
+
+    // Define the boundaries
+    let top = 0;
+    let bottom = matrix.length - 1;
+    let left = 0;
+    let right = matrix[0].length - 1;
+
+    while (top <= bottom && left <= right) {
+        // Traverse from left to right
+        for (let i = left; i <= right; i++) {
+            result.push(matrix[top][i]);
+        }
+        top++; // Move the top boundary down
+
+        // Traverse from top to bottom
+        for (let i = top; i <= bottom; i++) {
+            result.push(matrix[i][right]);
+        }
+        right--; // Move the right boundary left
+
+        if (top <= bottom) {
+            // Traverse from right to left
+            for (let i = right; i >= left; i--) {
+                result.push(matrix[bottom][i]);
+            }
+            bottom--; // Move the bottom boundary up
+        }
+
+        if (left <= right) {
+            // Traverse from bottom to top
+            for (let i = bottom; i >= top; i--) {
+                result.push(matrix[i][left]);
+            }
+            left++; // Move the left boundary right
+        }
+    }
+
+    return result;
+}
+
+// Example Usage
+console.log(spiralOrder([[1, 2, 3], [4, 5, 6], [7, 8, 9]])); 
+// Output: [1, 2, 3, 6, 9, 8, 7, 4, 5]
+
+console.log(spiralOrder([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])); 
+// Output: [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]
+
+/**
+Multiply Strings:-
+Note: You must not use any built-in BigInteger library or convert the inputs to integer directly.
+  Example 1:
+  Input: num1 = "2", num2 = "3"
+  Output: "6"
+  
+  Example 2:
+  Input: num1 = "123", num2 = "456"
+  Output: "56088"
+
+The problem revolves around strings as the primary data structure.
+
+Workflow
+1. Initialize Results Array:
+  Create an array result of size num1.length+num2.length to store intermediate results.
+  This ensures there’s enough space for the product, as the maximum length of the result is the sum of the lengths of the two numbers.
+  Why .fill(0)?  
+  By default, when you create a new array, it is empty. To ensure all positions start at 0, .fill(0) sets every element to 0.
+  Each element of this array is initialized to 0 using .fill(0).
+
+2. Iterate Over Each Digit in Reverse:
+  Multiply every digit of num2 with every digit of num1 from right to left.
+  Add the product to the corresponding position in the result array.
+
+3. Handle Carry:
+  For each multiplication, manage carry by propagating values greater than 10 to the next position in the array.
+
+4. Convert Result Array to String:  
+  Remove leading zeros from the result array.
+  Convert the array into a string representation of the number.
+
+Example Walkthrough:-
+Let's consider multiply("2", "3") as an example:
+1. Input:
+   num1 = "2", num2 = "3"
+2. Initialize Result Array:
+   result = [0, 0] (length = num1.length + num2.length).
+3. Iteration:
+   i = 0, j = 0
+    mul = (num1[0] - '0') * (num2[0] - '0') = 2 * 3 = 6.
+    sum = mul + result[i + j + 1] = 6 + result[1] = 6.
+    result[i + j + 1] = sum % 10 = 6 % 10 = 6.
+    result[i + j] += Math.floor(sum / 10) = Math.floor(6 / 10) = 0.
+4. Final Result Array:
+   result = [0, 6].
+5. Convert to String:
+    Convert result to a string: "06".
+    Remove leading zeros: "6".
+6. Output: =
+   "6" is returned as the product.
+
+Example Walkthrough:-
+Let's consider multiply("123", "456") as an example:
+1. Input:
+   num1 = "123", num2 = "456"
+2. Step 1: Initialize the Result Array
+   Length of num1 = 3, length of num2 = 3.
+   Initialize the result array: result = [0, 0, 0, 0, 0, 0] (length = num1.length + num2.length = 6).
+3. Step 2: Iteration
+   Outer Loop (i) and Inner Loop (j)
+   Start iterating from the rightmost digits of num1 and num2.
+4. Iteration 1:
+  i = 2 (rightmost digit of num1, 3)
+   j = 2 (rightmost digit of num2, 6):
+    Multiply digits: 
+      mul = (3 - '0') * (6 - '0') = 3*6 = 18
+    Add to current position in result:
+      sum = mul + result[5] = 18 + 0 = 18
+    Store remainder at position [5]:
+      result[5] = 18 % 10 = 8
+    Carry over to position [4]:
+      result[4] += [18/10] = 1
+   Result array: [0, 0, 0, 0, 1, 8].
+
+ Iteration 2:
+  i = 2 (rightmost digit of num1, 3)
+   j = 1 (rightmost digit of num2, 5):
+    Multiply digits: 
+      mul = (3 - '0') * (5 - '0') = 3*6 = 15
+    Add to current position in result:
+      sum = mul + result[4] = 15 + 1 = 16
+    Store remainder at position [5]:
+      result[4] = 16 % 10 = 6
+    Carry over to position [4]:
+      result[3] += [16/10] = 1
+   Result array: [0, 0, 0, 1, 6, 8].
+
+ Iteration 2:
+  i = 2 (rightmost digit of num1, 3)
+   j = 0 (rightmost digit of num2, 4):
+    Multiply digits: 
+      mul = (3 - '0') * (4 - '0') = 3*6 = 12
+    Add to current position in result:
+      sum = mul + result[3] = 12 + 1 = 13
+    Store remainder at position [5]:
+      result[3] = 13 % 10 = 3
+    Carry over to position [4]:
+      result[2] += [13/10] = 1
+   Result array: [0, 0, 1, 3, 6, 8].
+
+After all iterations, the result array becomes:
+result = [0, 5, 6, 0, 8, 8].
+
+5. Convert Result Array to String
+   Join the result array to form a string: "056088".
+   Remove leading zeros: "56088".
+
+6. Output:
+   The final output is "56088".
+**/

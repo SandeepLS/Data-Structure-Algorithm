@@ -1,0 +1,127 @@
+function diagonalSum(mat) {
+    const n = mat.length; // Size of the matrix
+    let sum = 0;
+
+    for (let i = 0; i < n; i++) {
+        // Add primary diagonal element
+        sum += mat[i][i];
+
+        // Add secondary diagonal element
+        sum += mat[i][n - 1 - i];
+    }
+
+    // Subtract the middle element once if n is odd
+    if (n % 2 !== 0) {
+        sum -= mat[Math.floor(n / 2)][Math.floor(n / 2)];
+    }
+
+    return sum;
+}
+
+// Example Usage
+console.log(diagonalSum([[1, 2, 3], [4, 5, 6], [7, 8, 9]])); // Output: 25
+console.log(diagonalSum([[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]])); // Output: 8
+
+
+/**
+Matrix Diagonal Sum:-
+Given a square matrix mat, return the sum of the matrix diagonals.
+Only include the sum of all the elements on the primary diagonal and,
+all the elements on the secondary diagonal that are not part of the primary diagonal.
+
+Example 1:
+Input: mat = [[1,2,3],
+              [4,5,6],
+              [7,8,9]]
+Output: 25
+Explanation: Diagonals sum: 1 + 5 + 9 + 3 + 7 = 25
+Notice that element mat[1][1] = 5 is counted only once.
+
+Example 2:
+Input: mat = [[1,1,1,1],
+              [1,1,1,1],
+              [1,1,1,1],
+              [1,1,1,1]]
+Output: 8
+
+This problem deals with a 2D array (matrix) and involves finding the sum of two diagonals:
+  > Primary Diagonal: Elements where the row index equals the column index (mat[i][i]).
+  > Secondary Diagonal: Elements where the row index and column index sum to n−1 (mat[i][n-1-i]).
+
+Example Walkthrough
+Example 1: mat=[[1,2,3],[4,5,6],[7,8,9]]
+1. Initialization: n=3, sum=0.
+2. Primary Diagonal: mat[0][0]=1, mat[1][1]=5, mat[2][2]=9.
+   Total/sum: 1+5+9=15.
+3. Secondary Diagonal: mat[0][2]=3, mat[1][1]=5, mat[2][0]=7.
+   Total/sum: 3+5+7=15.
+4. Avoid Double Counting Middle Element:
+   mat[1][1]=5 is counted twice.
+   Subtract once: 15+15−5=25.
+Output: 25.
+
+----------------------
+n - 1 - i :-
+  -> The expression n - 1 - i is used to calculate the index of the secondary diagonal element in a square matrix. Here's why:
+  -> Secondary Diagonal: 
+     Elements where the row index i and column index j satisfy:
+     i + j = n − 1 or equivalently j = n − 1 − i
+  
+     For example, in a 3x3 matrix:
+     Secondary Diagonal=mat[0][2],mat[1][1],mat[2][0]
+
+Breaking Down n - 1 - i :-
+  1. n - 1:
+  > Refers to the last index of the row (or column) in the matrix, because arrays in programming are 0-indexed.
+  > For a 3x3 matrix, n=3, so n−1=2, which is the index of the last column in each row.
+  
+  2. - i:
+  Subtracting the current row index i gives the column index for the secondary diagonal element.
+  For example:
+  When i=0 (first row), the secondary diagonal index is j = n − 1 − 0 = 2.
+  When i=1 (second row), the secondary diagonal index is j = n − 1 − 1 = 1.
+  When i=2 (third row), the secondary diagonal index is j = n − 1 − 2 = 0.
+-------------------------
+Example:
+      mat =  [[1,2,3],
+              [4,5,6],
+              [7,8,9]]
+  Primary Diagonal: mat[0][0]=1,mat[1][1]=5,mat[2][2]=9
+  Secondary Diagonal:
+    i=0: j=2 → mat[0][2]=3
+    i=1: j=1 → mat[1][1]=5
+    i=2: j=0 → mat[2][0]=7
+  Result: Primary Diagonal + Secondary Diagonal = 1+5+9+3+7=25.
+
+
+Time Complexity:
+  > Iterates through all rows once: O(n).
+  > Additional check for odd matrix size: O(1).
+  > Overall: O(n).
+
+Space Complexity:
+  > Uses only a constant amount of extra space for the sum variable.
+  > Overall: O(1).
+--------------------------
+Understand the concept:-
+if (n % 2 !== 0) {
+    sum -= mat[Math.floor(n / 2)][Math.floor(n / 2)];
+}
+1. Condition Check:
+   if (n % 2 !== 0)  
+   If n%2 is not equal to 0, n is odd.
+   For example:
+      n=3: Odd (3%2=1).
+      n=4: Even (4%2=0).
+2. Calculate Middle Element:
+   Math.floor(n / 2): Finds the middle row and column index.
+     > n=3: Math.floor(3 / 2)=1.
+     > Middle element: mat[1][1].
+
+   mat[Math.floor(n / 2)][Math.floor(n / 2)]:
+     > Access the middle element.
+3. Subtract Middle Element:
+   sum -= mat[Math.floor(n / 2)][Math.floor(n / 2)]:
+   > Subtract the value of the middle element from the sum to correct for double counting.
+
+**/  

@@ -1,52 +1,31 @@
-function spiralOrder(matrix) {
-    const result = []; // Array to store the spiral order traversal
-    if (matrix.length === 0) return result;
+Ex:
+var multiply = function(num1, num2) {
+    // Edge case for single digit 0
+    if (num1 === "0" || num2 === "0") return "0";
+    
+    const n1 = num1.length, n2 = num2.length;
+    const result = new Array(n1 + n2).fill(0); // Initialize result array
 
-    // Define the boundaries
-    let top = 0;
-    let bottom = matrix.length - 1;
-    let left = 0;
-    let right = matrix[0].length - 1;
-
-    while (top <= bottom && left <= right) {
-        // Traverse from left to right
-        for (let i = left; i <= right; i++) {
-            result.push(matrix[top][i]);
-        }
-        top++; // Move the top boundary down
-
-        // Traverse from top to bottom
-        for (let i = top; i <= bottom; i++) {
-            result.push(matrix[i][right]);
-        }
-        right--; // Move the right boundary left
-
-        if (top <= bottom) {
-            // Traverse from right to left
-            for (let i = right; i >= left; i--) {
-                result.push(matrix[bottom][i]);
-            }
-            bottom--; // Move the bottom boundary up
-        }
-
-        if (left <= right) {
-            // Traverse from bottom to top
-            for (let i = bottom; i >= top; i--) {
-                result.push(matrix[i][left]);
-            }
-            left++; // Move the left boundary right
+    // Multiply each digit of num1 and num2
+    for (let i = n1 - 1; i >= 0; i--) {
+        for (let j = n2 - 1; j >= 0; j--) {
+            const mul = (num1[i] - '0') * (num2[j] - '0'); // Multiply digits
+            const sum = mul + result[i + j + 1]; // Add to current position
+            
+            result[i + j + 1] = sum % 10; // Place the remainder
+            result[i + j] += Math.floor(sum / 10); // Add carry to the next position
         }
     }
 
-    return result;
-}
+    // Convert result array to string
+    let resultStr = result.join('');
+    return resultStr.startsWith('0') ? resultStr.slice(1) : resultStr; // Remove leading zeros
+};
 
 // Example Usage
-console.log(spiralOrder([[1, 2, 3], [4, 5, 6], [7, 8, 9]])); 
-// Output: [1, 2, 3, 6, 9, 8, 7, 4, 5]
+console.log(multiply("2", "3")); // Output: "6"
+console.log(multiply("123", "456")); // Output: "56088"
 
-console.log(spiralOrder([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])); 
-// Output: [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]
 
 /**
 Multiply Strings:-

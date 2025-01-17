@@ -1,0 +1,61 @@
+Example:
+  function countOdds(low, high) {
+      // Calculate the count of odd numbers in the range
+      const oddsUpToHigh = Math.floor((high + 1) / 2);
+      const oddsBeforeLow = Math.floor(low / 2);
+      return oddsUpToHigh - oddsBeforeLow;
+  }
+  
+  // Example Usage
+  console.log(countOdds(3, 7)); // Output: 3
+  console.log(countOdds(8, 10)); // Output: 1
+
+
+/**
+Count Odd Numbers in an Interval Range:-
+It is a mathematical problem that can be solved using basic arithmetic.
+
+Given two non-negative integers low and high. Return the count of odd numbers between low and high (inclusive).
+
+Example 1:
+Input: low = 3, high = 7
+Output: 3
+Explanation: The odd numbers between 3 and 7 are [3,5,7].
+
+Example 2:
+Input: low = 8, high = 10
+Output: 1
+Explanation: The odd numbers between 8 and 10 are [9].
+
+Mathematical Insight:-
+1. If low is odd, it contributes to the count of odd numbers. If it's even, the next number (low + 1) will be odd.
+2. Similarly, if high is odd, it contributes to the count of odd numbers. If it's even, the previous number (high-1) will be odd.
+3. The count of odd numbers in an interval can be calculated using: Count of odd numbers = ((high + 1)/2) - (low/2)
+
+Workflow of Execution:-
+Steps:
+1. Calculate the count of numbers up to high that are odd: oddsUpToHigh = ((high+1)/2)
+2. Calculate the count of numbers up to low - 1 that are odd: oddsBeforeLow = (low/2)
+3. The count of odd numbers in the range is oddsUpToHigh - oddsBeforeLow;
+
+Example Walkthrough:-
+  Example 1: low=3,high=7
+  1. oddsUpToHigh = ((7+1)/2) = 4 = 4
+  2. oddsBeforeLow = (3/2) = 1.5 = 1
+  3. Count = oddsUpToHigh − oddsBeforeLow = 4−1 = 3.
+  Output: 3.
+
+  Example 2: low=8,high=10
+  1. oddsUpToHigh = ((10+1)/2) = 5.5 = 5
+  2. oddsBeforeLow = (8/2) = 4 = 4
+  3. Count = oddsUpToHigh − oddsBeforeLow = 5-4 = 1.
+  Output: 1.
+
+Time Complexity:
+  > The solution uses basic arithmetic operations that take O(1) time.
+  > Complexity: O(1).
+Space Complexity:
+  > The solution uses a constant amount of space.
+  > Complexity: O(1).
+
+**/

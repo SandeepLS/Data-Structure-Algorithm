@@ -1,0 +1,72 @@
+Linear Search:-
+It sequentialy check each element in a list, Until a match is found or
+the whole list has been searched.
+
+Ex:-Given an arr of 'n' elements and target element 't', find the index of 't' in the arr. 
+Returon NULL if the target element is not found.
+
+function linearSearch(arr, target){
+    for(let i=0; i<arr.length; i++) {
+        if(arr[i] === target){
+            return i;
+        }
+    }
+    return "NULL";
+}
+console.log(linearSearch([-5, 2, 7, 10, 4], 10)); //3
+console.log(linearSearch([-5, 2, 7, 10, 4], -5)); //0
+console.log(linearSearch([-5, 2, 7, 10, 4], 0)); //NULL
+
+----------------------------------------------------------------------------------------------------
+Ex:-2, If you are working with Node.js, you can use the readline module to take input from the user.
+const readline = require('readline');
+
+//Create an interface, to read from the command Line
+const rl = readline.createInterface({
+    input:process.stdin,
+    output:process.stdout
+});
+
+//Linear search Algorithms
+function linearSearch(arr, target){
+    for(let i=0; i<arr.length; i++){
+        if(arr[i] === target){
+            return i;
+        }
+    }
+    return "NULL";
+}
+
+// Ask the user to enter something
+rl.question("Enter an array of number(comma-separeted):", function(userInputArr){
+    rl.question("Enter the target value:", function(userInputTarget){
+        const arr = userInputArr.split(",").map(Number);
+        const target = Number(userInputTarget);
+
+        const result = linearSearch(arr, target);
+
+        console.log(result);
+    });
+});
+
+------------------------------------------------------------------------------------------------------
+Ex:-3    //Get user input using prompt(only available in a Browser function).
+function linearSearch(arr, target){
+    for(let i=0; i<arr.length; i++) {
+        if(arr[i] === target){
+            return i;
+        }
+    }
+    return "NULL";
+}
+const userInputArr = prompt("Enter an array of number(comma-separeted):").split(",").map(Number);
+const userInputTarget = prompt("Enter the Target Number:");
+const result = linearSearch(userInputArr, Number(userInputTarget));
+
+console.log(result);
+
+
+In binary search, we use a smarter way to find something in a sorted list.
+Instead of checking each item one by one like in linear search, we start by looking at the middle item of the list. 
+If the middle item is what we’re looking for, great, we’re done! But if it’s not,
+we know whether the item we want is in the first half or the second half of the list.

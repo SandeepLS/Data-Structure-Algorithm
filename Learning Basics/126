@@ -1,0 +1,111 @@
+Method:
+Object.assign():-The target object where properties will be copied to, One or more source objects from which properties will be copied.
+syntax: Object.assign(target, ...sources)
+Example 1: Merging Objects:
+          const obj1 = { a: 1, b: 2 };
+          const obj2 = { b: 3, c: 4 };
+          
+          const result = Object.assign(obj1, obj2);
+          
+          console.log(result); // Output: { a: 1, b: 3, c: 4 }
+          console.log(obj1);   // Output: { a: 1, b: 3, c: 4 } (obj1 is also modified)
+          /*Explanation:
+          The b property from obj2 overwrites the b property in obj1.
+          The c property from obj2 is added to obj1.
+          */
+
+Example 2: Creating a New Object with Merged Properties
+          const obj1 = { a: 1, b: 2 };
+          const obj2 = { b: 3, c: 4 };
+          
+          const result = Object.assign({}, obj1, obj2);
+          
+          console.log(result); // Output: { a: 1, b: 3, c: 4 }
+          console.log(obj1);   // Output: { a: 1, b: 2 } (obj1 remains unchanged)
+          console.log(obj2);   // Output: { b: 3, c: 4 } (obj2 remains unchanged)
+
+Example 3: Cloning an Object
+You can use Object.assign() to create a shallow copy (clone) of an object.
+          const original = { x: 10, y: 20 };
+          
+          const clone = Object.assign({}, original);
+          
+          console.log(clone);     // Output: { x: 10, y: 20 }
+          console.log(clone === original); // Output: false (they are different objects)
+
+Example 4: Handling Multiple Source Objects
+          const target = { a: 1, b: 2 };
+          const source1 = { b: 3, c: 4 };
+          const source2 = { c: 5, d: 6 };
+          
+          const result = Object.assign(target, source1, source2);
+          
+          console.log(result); // Output: { a: 1, b: 3, c: 5, d: 6 }
+
+Example 5: Copying Symbol Properties
+          const sym = Symbol('sym');
+          const obj1 = { [sym]: 'value', a: 1 };
+          const obj2 = { b: 2 };
+          
+          const result = Object.assign({}, obj1, obj2);
+          
+          console.log(result); // Output: { a: 1, b: 2, [Symbol(sym)]: 'value' }
+
+//---------------------------------------------------------------------------------
+Methods:
+1: The Object.assign() method copies properties from one or more source objects to a target object.
+          <script>
+          // Create Target Object
+          const person1 = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+          };
+          
+          // Create Source Object
+          const person2 = {firstName: "Anne",lastName: "Smith"};
+          
+          // Assign Source to Target
+          Object.assign(person1, person2);
+          
+          // Display Target
+          let text = Object.entries(person1);
+          document.getElementById("demo").innerHTML = text;
+          </script>
+
+2)Object.entries() returns an array of the key/value pairs in an object:
+  Object.entries() makes it simple to use objects in loops:
+          <script>
+          const person = {
+            firstName : "John",
+            lastName  : "Doe",
+            age     : 50,
+            eyeColor  : "blue"
+          };
+          
+          let text = Object.entries(person);
+          document.getElementById("demo").innerHTML = text;
+          </script>
+
+etc...
+// Copies properties from a source object to a target object
+Object.assign(target, source)
+
+// Creates an object from an existing object
+Object.create(object)
+
+// Returns an array of the key/value pairs of an object
+Object.entries(object)
+
+// Creates an object from a list of keys/values
+Object.fromEntries()
+
+// Returns an array of the keys of an object
+Object.keys(object)
+
+// Returns an array of the property values of an object
+Object.values(object)
+
+// Groups object elements according to a function
+Object.groupBy(object, callback)

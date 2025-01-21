@@ -1,0 +1,40 @@
+function decodeString(s) {
+    const countStack = []; // Stack to store repeat counts
+    const resultStack = []; // Stack to store intermediate results
+    let currentString = ""; // Tracks the current decoded string
+    let currentNumber = 0; // Tracks the current multiplier
+
+    for (const char of s) {
+        if (!isNaN(char)) {
+            // If it's a digit, calculate the full number
+            currentNumber = currentNumber * 10 + parseInt(char, 10);
+        } else if (char === "[") {
+            // Push current state onto stacks and reset for new scope
+            countStack.push(currentNumber);
+            resultStack.push(currentString);
+            currentString = "";
+            currentNumber = 0;
+        } else if (char === "]") {
+            // Pop from stacks and decode the substring
+            const repeatCount = countStack.pop();
+            const previousString = resultStack.pop();
+            currentString = previousString + currentString.repeat(repeatCount);
+        } else {
+            // Append regular characters to the current string
+            currentString += char;
+        }
+    }
+
+    return currentString;
+}
+
+// Example Usage
+console.log(decodeString("3[a]2[bc]"));      // Output: "aaabcbc"
+console.log(decodeString("3[a2[c]]"));       // Output: "accaccacc"
+console.log(decodeString("2[abc]3[cd]ef"));  // Output: "abcabccdcdcdef"
+
+/**
+Decode String:-
+
+
+**/

@@ -1,0 +1,109 @@
+function isValid(s) {
+    const stack = []; // Stack to keep track of opening brackets
+    const pairs = { ')': '(', '}': '{', ']': '[' }; // Map of closing to opening brackets
+
+    for (const char of s) {
+        if (char in pairs) {
+            // Check if the stack top matches the expected opening bracket
+            if (stack.length === 0 || stack.pop() !== pairs[char]) {
+                return false;
+            }
+        } else {
+            // Push opening brackets onto the stack
+            stack.push(char);
+        }
+    }
+
+    // The stack should be empty if all brackets are balanced
+    return stack.length === 0;  //true
+}
+
+// Example Usage
+console.log(isValid("()"));       // Output: true
+console.log(isValid("()[]{}"));   // Output: true
+console.log(isValid("(]"));       // Output: false
+console.log(isValid("([{}])"));   // Output: true
+
+/**
+Valid Parentheses:-
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+  Open brackets must be closed by the same type of brackets.
+  Open brackets must be closed in the correct order.
+  Every close bracket has a corresponding open bracket of the same type.
+
+Example 1:
+Input: s = "()"
+Output: true
+
+Example 2:
+Input: s = "()[]{}"
+Output: true
+
+Example 3:
+Input: s = "(]"
+Output: false
+
+Example 4:
+Input: s = "([])"
+Output: true
+
+This problem involves a stack, which is well-suited for problems involving balanced parentheses.
+
+Workflow of Execution
+1. Initialization:
+  Create an empty stack: stack = [].
+  Define a map of pairs to relate closing brackets to their corresponding opening brackets: pairs = { ')': '(', '}': '{', ']': '[' }.
+2. Iterate Over the String:
+  For each character char in the string:
+   > If char is a closing bracket (exists in pairs):
+     > Check the top of the stack:
+       * If the stack is empty or the top of the stack is not the matching opening bracket, return false.
+     > Otherwise, pop the stack (remove the last opening bracket).
+   > If char is an opening bracket:
+     * Push it onto the stack.
+3. Final Check:
+   After processing all characters, return true if the stack is empty (all brackets are matched); otherwise, return false.
+
+Time Complexity:-
+> For Iteration: Each character in the string is processed once, resulting in O(n), where n is the length of the string.
+> For Stack Operations: Each push and pop operation is O(1).
+> Overall Time Complexity: O(n).
+
+Space Complexity:
+> The stack can store at most n opening brackets (if all characters are opening brackets).
+> Space Complexity: O(n).
+
+Example Walkthrough:-
+Example 1: "()"
+  Stack: []
+  Process (: Push to stack → Stack becomes [ '(' ].
+  Process ): Matches ( at the top → Pop from stack → Stack becomes [].
+  Final Check: Stack is empty → Return true.
+
+Example 2: "()[]{}"
+  Stack: []
+  Process (: Push to stack → [ '(' ].
+  Process ): Matches ( → Pop → [].
+  Process [: Push → [ '[' ].
+  Process ]: Matches [ → Pop → [].
+  Process {: Push → [ '{' ].
+  Process }: Matches { → Pop → [].
+  Final Check: Stack is empty → Return true.
+
+Example 3: "(]"
+  Stack: []
+  Process (: Push → [ '(' ].
+  Process ]: Does not match ( → Return false.
+
+Example 4: "([{}])"
+  Stack: []
+  Process (: Push → [ '(' ].
+  Process [: Push → [ '(', '[' ].
+  Process {: Push → [ '(', '[', '{' ].
+  Process }: Matches { → Pop → [ '(', '[' ].
+  Process ]: Matches [ → Pop → [ '(' ].
+  Process ): Matches ( → Pop → [].
+  Final Check: Stack is empty → Return true.
+**/

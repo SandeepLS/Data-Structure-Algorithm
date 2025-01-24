@@ -1,0 +1,6 @@
+
+
+var myName;
+But you can also declare a string variable like this:
+
+var myName = "your name";

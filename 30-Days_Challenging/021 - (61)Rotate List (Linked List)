@@ -1,0 +1,87 @@
+class ListNode {
+    constructor(val, next = null) {
+        this.val = val;
+        this.next = next;
+    }
+}
+
+function rotateRight(head, k) {
+    if (!head || !head.next || k === 0) return head;
+
+    // Step 1: Find the length of the list
+    let length = 1;
+    let tail = head;
+    while (tail.next) {
+        tail = tail.next;
+        length++;
+    }
+
+    // Step 2: Optimize rotations
+    k = k % length;
+    if (k === 0) return head; // No rotation needed
+
+    // Step 3: Find the new head (n - k)th node
+    let newTailPosition = length - k;
+    let newTail = head;
+
+    for (let i = 1; i < newTailPosition; i++) {
+        newTail = newTail.next;
+    }
+
+    // Step 4: Rotate the list
+    const newHead = newTail.next;
+    newTail.next = null; // Break the link
+    tail.next = head; // Connect the old tail to the old head
+
+    // Step 5: Return the new head
+    return newHead;
+}
+
+// Helper Function: Create a Linked List from an Array
+function createLinkedList(arr) {
+    let dummy = new ListNode(-1);
+    let current = dummy;
+    for (const val of arr) {
+        current.next = new ListNode(val);
+        current = current.next;
+    }
+    return dummy.next;
+}
+
+// Helper Function: Convert Linked List to an Array
+function linkedListToArray(head) {
+    const result = [];
+    while (head) {
+        result.push(head.val);
+        head = head.next;
+    }
+    return result;
+}
+
+// Example Usage
+const head = createLinkedList([1, 2, 3, 4, 5]);
+const k = 2;
+const rotatedHead = rotateRight(head, k);
+console.log(linkedListToArray(rotatedHead)); // Output: [4, 5, 1, 2, 3]
+
+
+/**
+Rotate List:
+Given the head of a linked list, rotate the list to the right by k places.
+
+Example 1:
+Input: head = [1,2,3,4,5], k = 2
+Output: [4,5,1,2,3]
+
+Example 2:
+Input: head = [0,1,2], k = 4
+Output: [2,0,1]
+
+Linked List data structure, which allows sequential access to elements but is not indexed like an array.
+
+Problem Understanding:
+We need to rotate a linked list to the right by k places.
+> A right rotation means taking the last elements and placing them at the beginning.
+> Since k can be very large, we only need to rotate by k % n (where n is the length of the list), as rotating n times results in the same list.
+
+**/

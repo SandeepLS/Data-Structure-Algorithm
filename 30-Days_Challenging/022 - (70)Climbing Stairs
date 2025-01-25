@@ -1,0 +1,64 @@
+function climbStairs(n) {
+    if (n <= 2) return n; // Base cases: f(1) = 1, f(2) = 2
+
+    let prev2 = 1; // f(1)
+    let prev1 = 2; // f(2)
+
+    for (let i = 3; i <= n; i++) {
+        const current = prev1 + prev2; // f(n) = f(n-1) + f(n-2)
+        prev2 = prev1;
+        prev1 = current;
+    }
+
+    return prev1; // Final result
+}
+
+// Example Usage
+console.log(climbStairs(2)); // Output: 2
+console.log(climbStairs(3)); // Output: 3
+console.log(climbStairs(5)); // Output: 8
+
+
+/**
+Climbing Stairs:-
+You are climbing a staircase. It takes n steps to reach the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+
+Example 1:
+Input: n = 2
+Output: 2
+Explanation: There are two ways to climb to the top.
+1. 1 step + 1 step
+2. 2 steps
+
+Example 2:
+Input: n = 3
+Output: 3
+Explanation: There are three ways to climb to the top.
+1. 1 step + 1 step + 1 step
+2. 1 step + 2 steps
+3. 2 steps + 1 step
+
+Data Structure Type:
+This question involves Dynamic Programming (DP), 
+a technique for solving problems by breaking them into smaller overlapping subproblems and solving them in an optimized way.
+
+Problem Understanding:
+To climb to the top of a staircase with n steps:
+> At each step, you can either climb 1 step or 2 steps.
+> You need to calculate the total number of distinct ways to climb n steps.
+
+Workflow of Execution:
+Example: n = 5
+1. Base Cases: f(1)=1, f(2)=2
+2. Iterative Calculation:
+  > f(3)=f(2)+f(1)=2+1=3
+  > f(4)=f(3)+f(2)=3+2=5
+  > f(5)=f(4)+f(3)=5+3=8
+3. Final Result:
+  Number of ways to climb 5 steps = 8
+
+Complexity Analysis:
+Time Complexity: O(n): We compute the result iteratively in a single loop up to n.
+Space Complexity: O(1): No additional space is required, as we only use two variables to store the previous results.
+**/

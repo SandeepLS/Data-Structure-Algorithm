@@ -1,0 +1,25 @@
+Hosting:-first we should understand the "Execution context".
+            In the temporal ded zone, for time B.
+        Ex:-
+        var a = 10; //These variable a, was attached to the Global object.
+        console.log(a);
+        O/P:-10
+        
+        Ex:-
+        console.log(a);
+        var a = 10;
+        O/P:-undefine
+
+        Ex:-
+        console.log(b);
+        let b = 20;  //These variable b, is attached to different Memory space the Global, in that case we get a error.(let & const)
+        var a = 10;  //These variable a, is attached to the Global object. But Incase of let & const, they are also allocated memory.that is known as Hosting.
+        O/P:-Cannot access 'b' before initialization
+        
+        Ex:-let a = 10;
+        console.log(a);
+        O/P:-10
+        
+        Ex:-console.log(a);
+        let a = 10;
+        O/P:-Erroe:- cannot access a, before initializing

@@ -1,0 +1,9 @@
+ Ex:-
+          function name(){
+              var name = "Sandeep";  //name is a local variable, in the `name` function
+              function displayName(){  //displayName() is the inner function, that forms the closure
+                  console.log(name);  //Accessing `name` from the Outer function/Parent function
+              }
+              displayName();
+          }
+          name();  //Sandeep  

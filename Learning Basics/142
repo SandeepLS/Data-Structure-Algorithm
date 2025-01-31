@@ -1,0 +1,13 @@
+import React from 'react';
+
+function FunctioanalComp(){
+    return <p>This is Functional Component</p>
+}
+
+ClassComponent.js:-
+import React from 'react';
+class ClassComp extends React.Component{
+    render(){
+      return <p>This is a Class Component</P>
+    }
+}

@@ -1,0 +1,10 @@
+render() in Class Components
+   For class components, the render() method is where the JSX is returned.
+    import React, { Component } from "react";
+    
+    class Hello extends Component {
+      render() {
+        return <h1>Hello, {this.props.name}!</h1>;
+      }
+    }
+    export default Hello;

@@ -1,0 +1,5 @@
+//Ex:2
+let a = 4;
+let b = "4";
+console.log(a == b); // true
+console.log(a === b); // false

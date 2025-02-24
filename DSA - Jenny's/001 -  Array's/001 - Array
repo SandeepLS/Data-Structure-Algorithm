@@ -1,4 +1,5 @@
 Array:-
+Array: Uses contiguous memory allocation. All elements are stored in a fixed-size block of memory.
 Arrays can contains a mix of different data types. you can store string, boolean, numbers or even objecta all in the same array.
 Array are resizable, you don't have to declare the size of an array before creating it.
 Arrays are iterables, They can be used with a for of loop.

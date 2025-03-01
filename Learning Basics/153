@@ -1,0 +1,109 @@
+var canMakeArithmeticProgression = function(arr) {
+    // Step 1: Sort the array
+    arr.sort((a, b) => a - b);
+
+    // Step 2: Compute the common difference
+    const commonDifference = arr[1] - arr[0];
+
+    // Step 3: Check consecutive differences
+    for (let i = 2; i < arr.length; i++) {
+        if (arr[i] - arr[i - 1] !== commonDifference) {
+            return false; // If any difference doesn't match
+        }
+    }
+
+    // Step 4: If all differences match
+    return true;
+};
+
+// Example Usage
+console.log(canMakeArithmeticProgression([3, 5, 1])); // Output: true
+console.log(canMakeArithmeticProgression([1, 2, 4])); // Output: false
+
+Time Complexity:-
+  > Sorting the Array: O(nlogn), where n is the length of the array.
+  > Iterating Through the Array: O(n).
+    Combined: O(nlogn) (since sorting dominates).
+
+Space Complexity:-
+  > Sorting Operation: O(n) (depending on the sorting algorithm used).
+  > Auxiliary Variables: O(1).
+    Combined: O(n).
+
+
+
+/**
+Can Make Arithmetic Progression From Sequence:-
+
+Approach:-
+1. Sort the Array:
+  Sorting ensures that the numbers are in ascending order, which makes it easier to check consecutive differences.
+
+2. Check Consecutive Differences:
+  Calculate the difference between the first two elements (commonDifference).
+  Iterate through the sorted array and ensure that every pair of consecutive elements has the same difference.
+
+3. Return Result:
+  If all differences are equal, return true.
+  If any difference is not equal, return false.
+
+
+Workflow of Execution:-
+1. Sort the Input Array:
+   > Sorting ensures the numbers are ordered for comparison.
+
+2. Compute Common Difference:
+   > Determine the difference between the first two numbers.
+
+3. Iterate Through the Array:
+   > For each consecutive pair of numbers, compare their difference to the commonDifference.
+   > If any difference doesn't match, return false.
+
+4. Return True:
+   > If all pairs have the same difference, return true.
+
+Example Execution
+Example 1:
+  Input: [3, 5, 1]
+  Step 1: Sort → [1, 3, 5].
+  Step 2: Compute commonDifference = 3 - 1 = 2.
+  Step 3: Check differences:
+    3 - 1 = 2 (matches commonDifference).
+    5 - 3 = 2 (matches commonDifference).
+  Step 4: Return true.
+
+Example 2:
+  Input: [1, 2, 4]
+  Step 1: Sort → [1, 2, 4].
+  Step 2: Compute commonDifference = 2 - 1 = 1.
+  Step 3: Check differences:
+    2 - 1 = 1 (matches commonDifference).
+    4 - 2 = 2 (doesn't match commonDifference).
+  Step 4: Return false.
+
+------------------------------------------------------------------------
+How (a, b) => a - b Works:-
+Logic:
+  It calculates the difference between the two elements:
+    If a - b is negative, a is considered smaller, and it stays before b.
+    If a - b is positive, a is considered larger, and it moves after b.
+    If a - b is zero, their order remains unchanged.
+
+Workflow Example: (a, b) => a - b
+Input: arr = [3, 1, 5, 2]
+1. Step 1: Initial State
+   Array: [3, 1, 5, 2].
+
+2. Step 2: Sorting Begins
+  The sort method compares pairs:
+    Compare 3 and 1: 3 - 1 = 2 → Swap → [1, 3, 5, 2].
+    Compare 3 and 5: 3 - 5 = -2 → No Swap → [1, 3, 5, 2].
+    Compare 5 and 2: 5 - 2 = 3 → Swap → [1, 3, 2, 5].
+
+3. Step 3: Repeat Comparisons
+   Compare 3 and 2: 3 - 2 = 1 → Swap → [1, 2, 3, 5].
+
+4. Step 4: Sorted Array
+   Final Result: [1, 2, 3, 5].
+-------------------------------------------------------------------------
+**/
